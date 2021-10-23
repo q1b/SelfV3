@@ -1,0 +1,14 @@
+---
+const { uid } = Astro.props;
+---
+<span id={uid}>
+  <slot></slot>
+</span>
+
+{`<script type="module" hoist define:vars={{ uid, }}>
+  import { annotate } from 'rough-notation';
+
+  const e = document.querySelector('#${uid}');
+  const annotation = annotate(e, { type: 'underline' });
+  annotation.show();
+</script>`}

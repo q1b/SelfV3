@@ -1,0 +1,212 @@
+---
+import Section from "./section.astro"
+import Item from "./item.astro"
+import PostSection from "./PostSection.astro"
+import Post from "./post.astro"
+---
+<section id="nav-dialog" class="fixed inset-0 z-10 overflow-y-auto" role="dialog" aria-modal="true" aria-labelledby="nav-dialog">
+  <article class="min-h-screen px-4 text-center">
+    <div id="nav-dialog-overlay" class="bg-slate-1000 opacity-80 backdrop-blur-sm fixed inset-0" aria-hidden="true">
+    </div>
+    <span class="inline-block h-screen align-middle" aria-hidden="true">
+      &ZeroWidthSpace;
+    </span>
+    <div id="nav-dialog-container" class="inline-block items-center justify-center w-full max-w-[calc(100%-20px)] sm:max-w-[calc(100%-60px)] md:max-w-[calc(100%-120px)] lg:max-w-[calc(10%+900px)] p-3 sm:p-10 my-8 overflow-hidden text-left align-middle bg-[#032945] shadow-xl rounded-2xl backdrop-blur-sm border-2 border-slate-400 max-h-96 overflow-y-auto">
+      <section class="grid grid-cols-1 sm:grid-cols-2 place-content-center gap-x-8">
+        <button id="navCloseButton" type="button" class="absolute right-10 top-10 justify-center p-0.5 text-sm font-medium text-slate-900 bg-slate-100 border border-transparent rounded-md hover:bg-slate-200 focus:outline-none focus-visible:ring-2 ring-offset-slate-1000 focus-visible:ring-offset-2 focus-visible:ring-slate-700 hidden sm:inline-flex">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+        </button>
+        <ul class="flex flex-col gap-y-6 sm:gap-y-12 justify-center">
+          <Section title="Navigation">
+            <Item link="/" uid="homeIconContainer" notation="Home" >
+              <canvas id="homeIcon" width="63.99" height="63.99"></canvas>
+            </Item>
+            <Item link="/" uid="msgIconContainer" notation="Chat" bg="from-transparent to-slate-600/10" >
+              <canvas id="msgIcon" width="63.99" height="63.99"></canvas>
+            </Item>
+            <Item link="/" uid="notesIconContainer" notation="Notes" bg="from-transparent to-slate-600/10" >
+              <canvas id="notesIcon" width="51.5475" height="79.435862069"></canvas>
+            </Item>
+            <Item link="/" uid="docsIconContainer" notation="Newsletter" bg="p-0 from-transparent to-slate-600/10" clx="col-span-2 sm:col-span-1" >
+              <canvas id="docsIcon" width="234" height="70" ></canvas>
+            </Item>
+          </Section>
+          <!-- <Section title="Social Media">
+            <Item link="/" notation="Home" >
+              <svg width="69" height="69" viewBox="0 0 69 69" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M3 34.5L10 27.5M10 27.5L34.5 3L59 27.5M10 27.5H59M10 27.5V62.5C10 63.4283 10.3688 64.3185 11.0251 64.9749C11.6815 65.6313 12.5717 66 13.5 66H24M10 27.5L24 66M59 27.5L66 34.5M59 27.5V62.5C59 63.4283 58.6313 64.3185 57.9749 64.9749C57.3185 65.6313 56.4283 66 55.5 66H45M59 27.5L45 66M24 66C24.9283 66 25.8185 65.6313 26.4749 64.9749C27.1312 64.3185 27.5 63.4283 27.5 62.5V48.5C27.5 47.5717 27.8688 46.6815 28.5251 46.0251C29.1815 45.3688 30.0717 45 31 45H38C38.9283 45 39.8185 45.3688 40.4749 46.0251C41.1312 46.6815 41.5 47.5717 41.5 48.5V62.5C41.5 63.4283 41.8688 64.3185 42.5251 64.9749C43.1815 65.6313 44.0717 66 45 66M24 66H45" stroke="white" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </Item>
+            <Item link="/" notation="Notes" bg="from-blue-400 via-indigo-500 to-violet-600" >
+              <svg width="56" height="69" viewBox="0 0 56 69" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M40.0588 66H15.3529H15C8.37258 66 3 60.6274 3 54V38.3335C3 36.318 3.98336 34.4293 5.6345 33.2735V33.2735C9.72812 30.408 15.3529 33.3365 15.3529 38.3334V41.8413C15.3529 48.1813 23.1639 51.1904 27.4175 46.489V46.489C31.5841 41.8839 39.2382 44.6648 39.4769 50.8705L40.0588 66ZM40.0588 66H40.9655C47.5929 66 52.9655 60.6274 52.9655 54V15C52.9655 8.37258 47.5929 3 40.9655 3H38.8235M3 25.5931V15C3 8.37259 8.37258 3 15 3H38.8235M38.8235 3V36.3529" stroke="white" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </Item>
+          </Section> -->
+        </ul>
+        <ul class="flex flex-col gap-y-6 sm:gap-y-12 ">
+          <PostSection title="Recent Posts">
+            <Post link="/" title="uiwtf" notation="Home"></Post>
+          </PostSection>
+        </ul>
+      </section>
+    </div>
+  </article>
+</section>
+<script>
+const navOpenButton = document.getElementById('navSwitchButton');
+const navCloseButton = document.getElementById('navCloseButton');
+
+const navDialog = document.getElementById('nav-dialog');
+
+let overflow = document.documentElement.style.overflow
+let paddingRight = document.documentElement.style.paddingRight
+
+let scrollbarWidth = window.innerWidth - document.documentElement.clientWidth
+
+navDialog.classList.add('hidden');
+let isNavOpen = false;
+
+let navOverlayDur = 200;
+let navDialogContainerDur = 400;
+const navOverlay = document.getElementById('nav-dialog-overlay');
+
+const navOverlayAle = navOverlay.animate({
+    opacity:[0,0.8],
+  },{
+    duration: navOverlayDur,
+    fill:'both',
+    easing:'cubic-bezier(.2,.8,.4,1)',
+  });
+
+const navDialogContainer = document.getElementById('nav-dialog-container');
+
+const navDialogContainerAle = navDialogContainer.animate(
+  [
+    {
+      transform:'scale(0) translateY(120%)',
+      opacity:0,
+    },
+    {
+      transform:'scale(1) translateY(0)',
+      opacity:1,
+    }
+  ],
+  {
+    duration: navDialogContainerDur,
+    fill:'both',
+    easing:'cubic-bezier(.2,.8,.4,1)',
+  }
+);
+
+let navItems = {};
+let navItemsAle = {};
+let navItemsEnterAle = {};
+// navItemsEnterAle[0].reverse()
+// navItemsEnterAle[1].reverse()
+
+document.querySelectorAll('.NavItem').forEach((element,i) => {
+  navItems[i] = element;
+  navItemsEnterAle[i] = element.animate({
+        transform:['translateY(-10%)','translateY(0%)'],
+        opacity:['0','1']
+      },
+      {
+        duration: 100*(i+1),
+        delay: 100*(i+1),
+        fill:'both',
+        easing:'cubic-bezier(.2,.8,.4,1)',
+  });
+  element.addEventListener('mouseenter',()=>{
+    if(navItemsAle[i]===undefined){
+      navItemsAle[i] = element.animate(
+        {
+          transform:['scale(1)','scale(1.05)']
+        },
+        {
+          duration: 200,
+          fill: 'both',
+          easing: 'cubic-bezier(.2,.8,.4,1)',
+        }
+      );
+    }
+    navItemsAle[i].playbackRate = +1;
+    navItemsAle[i].ready.then(()=>{
+      navItemsAle[i].play();
+    });
+  });
+  element.addEventListener('mouseleave',()=>{
+    navItemsAle[i].playbackRate = -1;
+    navItemsAle[i].play();
+  });
+});  
+
+function openNavAnimate(){
+    navDialog.classList.remove('hidden');
+    document.documentElement.style.overflow = 'hidden'
+    document.documentElement.style.paddingRight = `${scrollbarWidth}px`
+    Object.values(navItemsEnterAle).forEach((ale)=>{
+      ale.playbackRate = +1;
+        ale.play();
+    })
+    navOverlayAle.playbackRate = +1;
+    navDialogContainerAle.playbackRate = +1;
+    navOverlayAle.play();
+    navDialogContainerAle.play();
+    isNavOpen = !isNavOpen;
+}
+function closeNavAnimate(){
+    Object.values(navItemsEnterAle).forEach((ale,i)=>{
+          ale.playbackRate = -1;
+          ale.play();
+          if(i===Object.values(navItemsEnterAle).length-4){
+            ale.onfinish = function() {
+              if(!isNavOpen){
+                navOverlayAle.playbackRate = -1;
+                navDialogContainerAle.playbackRate = -1;
+                navOverlayAle.play();
+                navDialogContainerAle.play();
+                setTimeout(() => {
+                  navDialog.classList.add('hidden');
+                  document.documentElement.style.overflow = overflow;
+                  document.documentElement.style.paddingRight = paddingRight;
+                }, 300);
+              }
+            }
+          }
+    })
+    isNavOpen = !isNavOpen;
+}
+
+function animateNav(){
+  if(!isNavOpen) {
+    openNavAnimate();
+  } else {
+    closeNavAnimate();
+  }
+}
+
+navOpenButton.addEventListener('click',()=>{
+  animateNav()
+});
+
+const navBigSwitchButton = document.getElementById('navBigSwitchButton');
+
+navBigSwitchButton.addEventListener('click',()=>{
+  animateNav()
+});
+
+document.addEventListener('keydown', function (event) {
+  if ( event.ctrlKey && event.key === '/' ) {
+    animateNav()
+  }
+});
+
+navCloseButton.addEventListener('click',()=>{
+    animateNav()
+});
+// Rive Animations for MSG
+
+</script>

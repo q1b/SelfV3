@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono&family=Jua&family=Skranji&display=swap');
+
+@tailwind base;
+@tailwind utilities;
+@tailwind components;
+
+@layer utilities {
+  .tab-highlight-none{
+    -webkit-tap-highlight-color: transparent;
+  }
+  abbr[title] {
+    text-decoration: none;
+  }
+  .bg-blue-gradient {
+    background: radial-gradient(
+      circle,
+      hsla(231, 100%, 50%, 1) 0%,
+      hsla(196, 100%, 50%, 1) 100%
+    );
+  }
+  .bg-indigo-gradient {
+    background: radial-gradient(
+      circle,
+      hsla(264, 100%, 50%, 1) 0%,
+      hsla(272, 100%, 50%, 1) 100%
+    );
+  }
+  .bg-slate-gradient {
+    background: radial-gradient(
+      circle,
+      #0C1725 0%,
+      #293442 100%
+    );
+  }
+  .bg-blue-shadow{
+    box-shadow: 0px 0px 60px 1px hsla(210, 100%, 70%, 1);
+  }
+  .bg-indigo-shadow{
+    box-shadow: 0px 0px 60px 1px hsla(280, 100%, 70%, 1);
+  }
+}

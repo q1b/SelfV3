@@ -1,0 +1,41 @@
+---
+import RoughLine from "./Reuse/rough.astro"
+---
+  <div class="flex flex-col gap-16 p-10 md:flex-row hover:bg-slate-800/10 dark:hover:bg-indigo-400/10 rounded-xl transition-colors">
+    <article
+      id="background-circle"
+      class="relative bg-blue-gradient dark:bg-indigo-gradient z-0 flex items-center justify-center flex-shrink-0 w-32 h-32 rounded-full lg:w-64 md:w-52 sm:w-44 lg:h-64 md:h-52 sm:h-44"
+    >
+      <div
+        id="photo"
+        class="bg-blue-shadow dark:bg-indigo-shadow relative z-10 rounded-full lg:w-56 md:w-44 sm:w-36 w-28 opacity-80 lg:h-56 md:h-44 sm:h-36 h-28"
+        style="
+              background-position: top center;
+              background-size: cover;
+              background-image: url('https://raw.githubusercontent.com/sacarvy/AstroA/main/public/pic.jpeg');
+            "
+      ></div>
+    </article>
+    <article class="relative max-w-xl text-xl selection:text-[#0099ff] selection:bg-[hsla(210,100%,50%,0.2)]">
+      <h1 class="text-4xl font-black text-white dark:text-slate-800 mb-6">
+        Hi there, I'm
+        <RoughLine uid="Uniq">Sukhpreet</RoughLine>
+        .
+      </h1>
+      <p class="mb-3 text-white dark:text-slate-700 selection:text-blue-500 selection:bg-blue-500/10">
+        A self taught developer, who learnt UI Engineering skills,
+        <br />
+        during the lockdown, and experimenting with it.
+      </p>
+      <p class="mb-3 text-white dark:text-slate-700 selection:text-indigo-500 selection:bg-indigo-500/10">
+        Playing Basketball, writing code, and practicing yoga
+        <br />
+        are some of my favorite hobbies.
+      </p>
+      <p class="mb-3 text-white dark:text-slate-700 selection:text-purple-500 selection:bg-purple-500/10">
+        I believe in vasudhaiva kutumbakam,
+        <br />
+        And I am ...
+      </p>
+    </article>
+  </div>

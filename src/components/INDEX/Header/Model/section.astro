@@ -1,0 +1,9 @@
+---
+const { title } = Astro.props;
+---
+<li>
+  <h1 class="text-lg sm:text-2xl text-sky-400 mb-8 font-medium leading-6" id="nav-dialog-title">{title}</h1>
+  <ul class="grid grid-cols-3 gap-x-6 sm:gap-x-10">
+    <slot/>
+  </ul>
+</li>
