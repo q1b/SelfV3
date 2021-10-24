@@ -1,5 +1,5 @@
 ---
-const { uid, type, color="currentColor", duration=200, delay=0 } = Astro.props;
+const { uid, type, color="currentColor" } = Astro.props;
 ---
 <span id={uid} class="">
   <slot></slot>
@@ -9,6 +9,6 @@ const { uid, type, color="currentColor", duration=200, delay=0 } = Astro.props;
   import { annotate } from 'rough-notation';
 
   const e = document.querySelector('#${uid}');
-  const annotation = annotate(e, { type: '${type}', color: '${color}',duration: ${duration}, delay: ${delay} });
+  const annotation = annotate(e, { type: '${ type }' , color: '${ color }'});
   setTimeout(() => {annotation.show();}, 1000);
 </script>`}
