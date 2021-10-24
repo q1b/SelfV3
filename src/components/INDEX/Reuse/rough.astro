@@ -1,14 +1,14 @@
 ---
-const { uid } = Astro.props;
+const { uid, type, color="currentColor", duration=200, delay=0 } = Astro.props;
 ---
-<span id={uid}>
+<span id={uid} class="">
   <slot></slot>
 </span>
 
-{`<script type="module" hoist define:vars={{ uid, }}>
+{`<script type="module">
   import { annotate } from 'rough-notation';
 
   const e = document.querySelector('#${uid}');
-  const annotation = annotate(e, { type: 'underline' });
-  annotation.show();
+  const annotation = annotate(e, { type: '${type}', color: '${color}',duration: ${duration}, delay: ${delay} });
+  setTimeout(() => {annotation.show();}, 1000);
 </script>`}

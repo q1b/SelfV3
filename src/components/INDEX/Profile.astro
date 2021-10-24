@@ -1,5 +1,5 @@
 ---
-import RoughLine from "./Reuse/rough.astro"
+import RoughJS from "./Reuse/rough.astro"
 ---
   <div class="flex flex-col gap-16 p-10 md:flex-row hover:bg-slate-800/10 dark:hover:bg-indigo-400/10 rounded-xl transition-colors">
     <article
@@ -19,23 +19,51 @@ import RoughLine from "./Reuse/rough.astro"
     <article class="relative max-w-xl text-xl selection:text-[#0099ff] selection:bg-[hsla(210,100%,50%,0.2)]">
       <h1 class="text-4xl font-black text-white dark:text-slate-800 mb-6">
         Hi there, I'm
-        <RoughLine uid="Uniq">Sukhpreet</RoughLine>
+        <RoughJS uid="Uniq" type="underline" >Sukhpreet</RoughJS>
         .
       </h1>
-      <p class="mb-3 text-white dark:text-slate-700 selection:text-blue-500 selection:bg-blue-500/10">
-        A self taught developer, who learnt UI Engineering skills,
+      <div class="mb-3 text-white dark:text-slate-600">
+        A 
+        <p class="inline dark:text-slate-600 text-blue-500">
+          <RoughJS uid="selfTaughtDev" type="highlight" color="rgb(59 130 246 / 0.1)" >self&nbsp;taught&nbsp;developer</RoughJS>,
+        </p>
+        who learnt UI Engineering skills,
         <br />
         during the lockdown, and experimenting with it.
-      </p>
-      <p class="mb-3 text-white dark:text-slate-700 selection:text-indigo-500 selection:bg-indigo-500/10">
-        Playing Basketball, writing code, and practicing yoga
+      </div>
+      <div class="mb-3 text-white dark:text-slate-600">
+        <p class="inline dark:text-slate-600 text-indigo-500">
+          <RoughJS uid="playingBasketball" type="highlight" color="rgb(99 102 241 / 0.2)" >
+            Playing&nbsp;Basketball
+          </RoughJS>,
+        </p>
+        <p class="inline dark:text-slate-600 text-violet-500 ">
+          <RoughJS uid="writingCODE" type="highlight" color="rgb(139 92 246 / 0.2)" >
+            writing&nbsp;code
+          </RoughJS>,
+        </p> and 
+        <p class="inline dark:text-slate-600 text-purple-500">
+          <RoughJS uid="yoga" type="highlight" color="rgb(168 85 247 / 0.2)">
+            practicing&nbsp;yoga
+          </RoughJS>
+        </p>
         <br />
-        are some of my favorite hobbies.
-      </p>
-      <p class="mb-3 text-white dark:text-slate-700 selection:text-purple-500 selection:bg-purple-500/10">
-        I believe in vasudhaiva kutumbakam,
+        are some of my 
+        <p class="inline dark:text-slate-600 text-pink-500">
+          <RoughJS uid="freeTime" type="highlight"  color="rgb(236 72 153 / 0.2)">
+            free&nbsp;time&nbsp;favorites
+          </RoughJS>.
+        </p>
+      </div>
+      <div class="mb-3 text-white dark:text-slate-600">
+        I believe in 
+        <p class="inline dark:text-slate-600 text-rose-500">
+        <RoughJS uid="vasudhaivaKutumbakam" type="highlight"  color="rgb(244 63 94 / 0.2)">
+            vasudhaiva kutumbakam
+        </RoughJS>,
+        </p>
         <br />
         And I am ...
-      </p>
+      </div>
     </article>
   </div>

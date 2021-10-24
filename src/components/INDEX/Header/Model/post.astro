@@ -3,11 +3,11 @@ const { link,imgSrc, title, notation,} = Astro.props;
 ---
 
 <li class="w-full flex flex-col items-center">
-  <a href={ link } class="relative group w-full h-48 rounded-lg transition-colors" style="box-shadow: 0 10px 15px -3px rgba(255, 255, 255, 0.1), 0 4px 6px -2px rgba(255, 255, 255, 0.05);">
+  <a href={ link } class="relative navItem group w-full h-48 rounded-lg transition-colors" style="">
     <div class="absolute inset-0 m-0 box-border">
-      <img class="w-0 h-0 max-w-full max-h-full min-w-full min-h-full object-cover block absolute inset-0 visible box-border m-auto p-0 rounded-lg" sizes="100vw" src={imgSrc ?? "https://rauno.xyz/_next/image?url=%2Fstatic%2Fuiwtf.png&w=640&q=75"} alt="UIWTF" >
+      <img class="w-0 h-0 max-w-full max-h-full min-w-full min-h-full object-cover block absolute inset-0 visible box-border rounded-lg m-auto p-0" sizes="100vw" src={imgSrc ?? "https://rauno.xyz/_next/image?url=%2Fstatic%2Fuiwtf.png&w=640&q=75"} alt="UIWTF" >
     </div>
-    <div class="absolute inset-0 bg-slate-900/30 transition-opacity opacity-0 group-hover:opacity-100 backdrop-blur-[1px] duration-300 " style="transition-timing-function: cubic-bezier(.2, .8, .2, 1);"></div>
+    <div class="absolute inset-0 bg-slate-900/30 transition-opacity opacity-0 group-hover:opacity-100 backdrop-blur-[1px] duration-300 rounded-lg shadow-white-lg dark:shadow-slate-lg" style="transition-timing-function: cubic-bezier(.2, .8, .2, 1);"></div>
     <div class="absolute left-8 bottom-4 opacity-0 translate-y-4 group-hover:translate-y-0 group-hover:opacity-100 transition-opacity" style="
       transition-property: opacity, transform;
       transition-timing-function: cubic-bezier(0.4, 0.3, 0.7, 1);"

@@ -14,7 +14,10 @@ let title = 'My Astro Site';
     <script>
         const root = document.documentElement;
         const theme = localStorage.getItem('theme');
-        if (theme === 'dark' || (!theme) && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        if (theme === 'dark') {
+            root.classList.add('dark');
+        } else if ( !(window.matchMedia('(prefers-color-scheme: dark)').matches) ) {
+            localStorage.theme = 'dark';
             root.classList.add('dark');
         } else {
             root.classList.remove('dark');
@@ -49,7 +52,6 @@ let title = 'My Astro Site';
         fit: rive.Fit.Contain,
         alignment: rive.Alignment.Center,
     });
-
     const r = new rive.Rive({
         src: '/assets/main.riv',
         canvas: document.getElementById('themeSwitchButton'),
@@ -59,9 +61,9 @@ let title = 'My Astro Site';
         stateMachines: 'Toggle',
         onLoad: (_) => {
             updateCanvas( document.getElementById('themeSwitchButton'), 39, 39);
-            if (localStorage.theme === 'dark') {
+            if (localStorage.theme === 'dark' ) {
                     r.stateMachineInputs('Toggle')[0].value = true;
-                } else {
+            } else {
                     r.stateMachineInputs('Toggle')[0].value = false;
             }
             button.onclick = () => {
