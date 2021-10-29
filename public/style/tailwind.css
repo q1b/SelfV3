@@ -517,10 +517,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   z-index: 50;
 }
 
-.col-span-2{
-  grid-column: span 2 / span 2;
-}
-
 .m-0{
   margin: 0px;
 }
@@ -548,6 +544,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .mb-8{
   margin-bottom: 2rem;
+}
+
+.ml-4{
+  margin-left: 1rem;
 }
 
 .box-border{
@@ -594,8 +594,8 @@ Ensure the default browser behavior of the `hidden` attribute.
   height: 1.5rem;
 }
 
-.h-16{
-  height: 4rem;
+.h-8{
+  height: 2rem;
 }
 
 .h-48{
@@ -638,8 +638,8 @@ Ensure the default browser behavior of the `hidden` attribute.
   width: 1.5rem;
 }
 
-.w-16{
-  width: 4rem;
+.w-8{
+  width: 2rem;
 }
 
 .w-0{
@@ -683,12 +683,12 @@ Ensure the default browser behavior of the `hidden` attribute.
   transform: var(--tw-transform);
 }
 
-.grid-cols-1{
-  grid-template-columns: repeat(1, minmax(0, 1fr));
+.resize{
+  resize: both;
 }
 
-.grid-cols-3{
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+.grid-cols-1{
+  grid-template-columns: repeat(1, minmax(0, 1fr));
 }
 
 .flex-col{
@@ -728,11 +728,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .gap-x-8{
   -moz-column-gap: 2rem;
        column-gap: 2rem;
-}
-
-.gap-x-6{
-  -moz-column-gap: 1.5rem;
-       column-gap: 1.5rem;
 }
 
 .overflow-hidden{
@@ -779,6 +774,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 .bg-slate-1000{
   --tw-bg-opacity: 1;
   background-color: rgb(3 14 28 / var(--tw-bg-opacity));
+}
+
+.bg-transparent{
+  background-color: transparent;
 }
 
 .bg-blue-1000\/30{
@@ -884,6 +883,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .p-0\.5{
   padding: 0.125rem;
+}
+
+.p-1{
+  padding: 0.25rem;
 }
 
 .px-4{
@@ -1050,10 +1053,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .text-sky-400{
   --tw-text-opacity: 1;
   color: rgb(56 189 248 / var(--tw-text-opacity));
-}
-
-.underline{
-  text-decoration: underline;
 }
 
 .opacity-80{
@@ -1358,12 +1357,12 @@ abbr[title] {
 }
 
 @media (min-width: 640px){
-  .sm\:col-span-1{
-    grid-column: span 1 / span 1;
-  }
-
   .sm\:mt-10{
     margin-top: 2.5rem;
+  }
+
+  .sm\:ml-0{
+    margin-left: 0px;
   }
 
   .sm\:block{
@@ -1390,6 +1389,10 @@ abbr[title] {
     height: 9rem;
   }
 
+  .sm\:h-16{
+    height: 4rem;
+  }
+
   .sm\:w-44{
     width: 11rem;
   }
@@ -1402,12 +1405,24 @@ abbr[title] {
     width: auto;
   }
 
+  .sm\:w-16{
+    width: 4rem;
+  }
+
   .sm\:max-w-\[calc\(100\%-60px\)\]{
     max-width: calc(100% - 60px);
   }
 
   .sm\:grid-cols-2{
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .sm\:grid-cols-3{
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .sm\:flex-col{
+    flex-direction: column;
   }
 
   .sm\:gap-y-10{
@@ -1418,6 +1433,10 @@ abbr[title] {
     row-gap: 3rem;
   }
 
+  .sm\:gap-y-0{
+    row-gap: 0px;
+  }
+
   .sm\:gap-x-10{
     -moz-column-gap: 2.5rem;
          column-gap: 2.5rem;
@@ -1425,6 +1444,10 @@ abbr[title] {
 
   .sm\:p-10{
     padding: 2.5rem;
+  }
+
+  .sm\:p-3{
+    padding: 0.75rem;
   }
 
   .sm\:text-2xl{

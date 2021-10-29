@@ -14,6 +14,7 @@ export default {
   },
   renderers: [
     // "@astrojs/renderer-svelte"
-    "@astrojs/renderer-react"
+    // "@astrojs/renderer-react"
+    "@astrojs/renderer-preact"
   ],
 };

@@ -6,26 +6,30 @@ import Post from "./post.astro"
 ---
 <section id="nav-dialog" class="fixed inset-0 z-10 overflow-y-auto" role="dialog" aria-modal="true" aria-labelledby="nav-dialog">
   <article class="min-h-screen px-4 text-center">
-    <div id="nav-dialog-overlay" class="bg-slate-1000 dark:bg-purple-400 opacity-80 fixed inset-0" aria-hidden="true">
+    <div id="nav-dialog-overlay" class="fixed inset-0 bg-slate-1000 dark:bg-purple-400 opacity-80" aria-hidden="true">
     </div>
     <span class="inline-block h-screen align-middle" aria-hidden="true">
       &ZeroWidthSpace;
     </span>
     <div id="nav-dialog-container" class="inline-block items-center justify-center w-full max-w-[calc(100%-20px)] sm:max-w-[calc(100%-60px)] md:max-w-[calc(100%-120px)] lg:max-w-[calc(10%+900px)] p-3 sm:p-10 my-8 overflow-hidden text-left align-middle bg-[hsl(206,100%,8%)]/50 dark:bg-[hsl(266,100%,4%)]/80 backdrop-blur shadow-lg rounded-2xl max-h-96 overflow-y-auto" style="--tw-shadow:0 -4px 6px -2px hsla(218, 30%, 60%, 0.05), 0 10px 15px -3px hsla(178, 50%, 50%, 0.1), 0 4px 6px -2px hsla(218, 30%, 60%, 0.05);">
       <section class="grid grid-cols-1 sm:grid-cols-2 place-content-center gap-x-8">
-        <ul class="flex flex-col gap-y-6 sm:gap-y-12 justify-center">
+        <ul class="flex flex-col justify-center gap-y-6 sm:gap-y-12">
           <Section title="Navigation">
             <Item link="/" uid="homeIconContainer" notation="Home" >
-              <canvas id="homeIcon" width="63.99" height="63.99"></canvas>
+              <canvas class="hidden sm:block" id="homeIcon" width="63.99" height="63.99"></canvas>
+              <canvas class="sm:hidden" id="homeIconMobile" width="24" height="24"></canvas>
             </Item>
             <Item link="/" uid="msgIconContainer" notation="Chat" bg="from-transparent to-slate-600/10" >
-              <canvas id="msgIcon" width="63.99" height="63.99"></canvas>
+              <canvas class="hidden sm:block" id="msgIcon" width="63.99" height="63.99"></canvas>
+              <canvas class="sm:hidden" id="msgIconMobile" width="24" height="24"></canvas>
             </Item>
             <Item link="/" uid="notesIconContainer" notation="Notes" bg="from-transparent to-slate-600/10" >
-              <canvas id="notesIcon" width="51.5475" height="79.435862069"></canvas>
+              <canvas class="hidden sm:block" id="notesIcon" width="51.5475" height="79.435862069"></canvas>
+              <canvas class="sm:hidden" id="notesIconMobile" width="20.619" height="31.774344827"></canvas>
             </Item>
-            <Item link="/" uid="docsIconContainer" notation="Newsletter" bg="p-0 from-transparent to-slate-600/10" clx="col-span-2 sm:col-span-1" >
-              <canvas id="docsIcon" width="234" height="70" ></canvas>
+            <Item navigationTo="/" uid="docsIconContainer" notation="Newsletter" bg="p-0 from-transparent to-slate-600/10">
+              <canvas class="hidden sm:block" id="docsIcon" width="234" height="70" ></canvas>
+              <canvas class="sm:hidden" id="docsIconMobile" width="78" height="23.340518018"></canvas>
             </Item>
           </Section>
           <!-- <Section title="Social Media">
@@ -46,166 +50,12 @@ import Post from "./post.astro"
             <Post link="/" title="Recently, updates from" notation='Astro, Nuxt, Next, Angular, Vue, React, tailwindcss ...' imgSrc="/assets/Posts/what_going_on_web.png" ></Post>
           </PostSection>
         </ul>
-        {`<button id="navCloseButton" type="button" class="navItem absolute right-10 top-10 justify-center p-0.5 text-sm font-medium text-slate-900 bg-slate-100 border border-transparent rounded-md hover:bg-slate-200 focus:outline-none focus-visible:ring-2 ring-offset-slate-1000 focus-visible:ring-offset-2 focus-visible:ring-slate-700 hidden sm:inline-flex">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <button id="navCloseButton" type="button" class="navItem absolute right-10 top-10 justify-center p-0.5 text-sm font-medium text-slate-900 bg-slate-100 border border-transparent rounded-md hover:bg-slate-200 focus:outline-none focus-visible:ring-2 ring-offset-slate-1000 focus-visible:ring-offset-2 focus-visible:ring-slate-700 hidden sm:inline-flex">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" />
           </svg>
-        </button>`}
+        </button>
       </section>
     </div>
   </article>
 </section>
-<script>
-const navOpenButton = document.getElementById('navSwitchButton');
-const navCloseButton = document.getElementById('navCloseButton');
-
-const navDialog = document.getElementById('nav-dialog');
-
-let overflow = document.documentElement.style.overflow
-let paddingRight = document.documentElement.style.paddingRight
-
-let scrollbarWidth = window.innerWidth - document.documentElement.clientWidth
-
-navDialog.classList.add('hidden');
-let isNavOpen = false;
-
-let navOverlayDur = 200;
-let navDialogContainerDur = 400;
-const navOverlay = document.getElementById('nav-dialog-overlay');
-
-const navOverlayAle = navOverlay.animate({
-    opacity:[0,0.8],
-  },{
-    duration: navOverlayDur,
-    fill:'both',
-    easing:'cubic-bezier(.2,.8,.4,1)',
-  });
-
-const navDialogContainer = document.getElementById('nav-dialog-container');
-
-const navDialogContainerAle = navDialogContainer.animate(
-  [
-    {
-      transform:'scale(0) translateY(120%)',
-      opacity:0,
-    },
-    {
-      transform:'scale(1) translateY(0)',
-      opacity:1,
-    }
-  ],
-  {
-    duration: navDialogContainerDur,
-    fill:'both',
-    easing:'cubic-bezier(.2,.8,.4,1)',
-  }
-);
-
-let navItems = {};
-// let navItemsAle = {};
-let navItemsEnterAle = {};
-// navItemsEnterAle[0].reverse()
-// navItemsEnterAle[1].reverse()
-
-document.querySelectorAll('.NavItem').forEach((element,i) => {
-  navItems[i] = element;
-  navItemsEnterAle[i] = element.animate({
-        transform:['translateY(-10%)','translateY(0%)'],
-        opacity:['0','1']
-      },
-      {
-        duration: 100*(i+1),
-        delay: 100*(i+1),
-        fill:'both',
-        easing:'cubic-bezier(.2,.8,.4,1)',
-  });
-  // element.addEventListener('mouseenter',()=>{
-  //   // if(navItemsAle[i]===undefined){
-  //   //   navItemsAle[i] = element.animate(
-  //   //     {
-  //   //       filter:['brightness(1)','brightness(1.1)']
-  //   //     },
-  //   //     {
-  //   //       duration: 200,
-  //   //       fill: 'both',
-  //   //       easing: 'cubic-bezier(.2,.8,.4,1)',
-  //   //     }
-  //   //   );
-  //   }
-  //   // navItemsAle[i].playbackRate = +1;
-  //   // navItemsAle[i].ready.then(()=>{
-  //   //   navItemsAle[i].play();
-  //   // });
-  // });
-  // element.addEventListener('mouseleave',()=>{
-  //   // navItemsAle[i].playbackRate = -1;
-  //   // navItemsAle[i].play();
-  // });
-});  
-
-function openNavAnimate(){
-    navDialog.classList.remove('hidden');
-    document.documentElement.style.overflow = 'hidden'
-    document.documentElement.style.paddingRight = `${scrollbarWidth}px`
-    Object.values(navItemsEnterAle).forEach((ale)=>{
-      ale.playbackRate = +1;
-        ale.play();
-    })
-    navOverlayAle.playbackRate = +1;
-    navDialogContainerAle.playbackRate = +1;
-    navOverlayAle.play();
-    navDialogContainerAle.play();
-    isNavOpen = !isNavOpen;
-}
-function closeNavAnimate(){
-    Object.values(navItemsEnterAle).forEach((ale,i)=>{
-          ale.playbackRate = -1;
-          ale.play();
-          if(i===Object.values(navItemsEnterAle).length-5){
-            ale.onfinish = function() {
-              if(!isNavOpen){
-                navOverlayAle.playbackRate = -1;
-                navDialogContainerAle.playbackRate = -1;
-                navOverlayAle.play();
-                navDialogContainerAle.play();
-                setTimeout(() => {
-                  navDialog.classList.add('hidden');
-                  document.documentElement.style.overflow = overflow;
-                  document.documentElement.style.paddingRight = paddingRight;
-                }, 400);
-              }
-            }
-          }
-    })
-    isNavOpen = !isNavOpen;
-}
-
-function animateNav(){
-  if(!isNavOpen) {
-    openNavAnimate();
-  } else {
-    closeNavAnimate();
-  }
-}
-
-navOpenButton.addEventListener('click',()=>{
-  animateNav()
-});
-
-const navBigSwitchButton = document.getElementById('navBigSwitchButton');
-
-navBigSwitchButton.addEventListener('click',()=>{
-  animateNav()
-});
-
-document.addEventListener('keydown', function (event) {
-  if ( event.ctrlKey && event.key === '/' ) {
-    animateNav()
-  }
-});
-
-navCloseButton.addEventListener('click',()=>{
-  animateNav()
-});
-
-</script>
