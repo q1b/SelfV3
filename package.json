@@ -5,16 +5,26 @@
   "scripts": {
     "dev": "concurrently \"astro dev\" \"tailwindcss -i tailwind.css -o ./public/style/tailwind.css -w\" ",
     "start": "astro dev",
+    "b": "astro build",
     "build": "astro build && tailwindcss -i ./tailwind.css -o ./dist/style/tailwind.css --minify",
     "preview": "astro preview"
   },
   "devDependencies": {
     "@tailwindcss/typography": "0.5.0-alpha.2",
-    "astro": "^0.0.0-compiler-2021928195510",
+    "astro": "^0.21.0-next.0",
     "tailwindcss": "^3.0.0-alpha.1"
   },
   "dependencies": {
+    "@astrojs/renderer-lit": "^0.2.0-next.0",
     "@astrojs/renderer-preact": "^0.0.0-compiler-2021928195510",
+    "@astrojs/renderer-react": "^0.3.0-next.0",
+    "@astrojs/renderer-svelte": "^0.2.0-next.0",
+    "@astrojs/renderer-vue": "^0.2.0-next.0",
+    "@headlessui/react": "^1.4.1",
+    "@headlessui/vue": "^1.4.1",
+    "@radix-ui/react-id": "^0.1.1",
+    "@radix-ui/react-tabs": "^0.1.1",
+    "@spectrum-web-components/tabs": "^0.6.10",
     "rive-js": "^0.7.32",
     "rough-notation": "^0.5.1"
   }

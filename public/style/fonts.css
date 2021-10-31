@@ -1,0 +1,34 @@
+.stories{
+    display: grid;
+    width: 526px;
+    overflow-x: auto;
+    grid: 1fr / auto-flow 100%; 
+    scroll-snap-type: x mandatory;
+    overscroll-behavior-x: contain;
+}
+
+.user{
+    display: grid;
+    padding-left: 10px;
+    scroll-snap-align: start; 
+    scroll-snap-stop: always;
+    grid: [story] 1fr / [story] 1fr;
+}
+
+.story{
+    grid-area: story;
+    user-select: none;
+    touch-action: manipulation;
+}
+
+.seen{
+    opacity: 0;
+    pointer-events: none;
+}
+
+@font-face {
+   font-family: 'Flow';
+   font-weight: 400;
+   font-style: normal;
+    src: url('../fonts/flow-circular.woff') format('woff');
+}

@@ -74,6 +74,7 @@ module.exports = {
         code: 'JetBrains Mono, monospace',
         p:'Jua, sans-serif',
         heading:'Skranji, cursive',
+        flow: 'Flow',
       },
       transitionProperty: {
         'shadow-colors': 'shadow,color',

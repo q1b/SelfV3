@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono&family=Jua&family=Skranji&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono&family=Jua&family=Skranji:wght@400;700&display=swap');
+
 
 @tailwind base;
 @tailwind utilities;
@@ -40,6 +41,9 @@
   }
   .shadow-white-lg{
     box-shadow: 0 10px 15px -3px rgba(255, 255, 255, 0.1), 0 4px 6px -2px rgba(255, 255, 255, 0.05);
+  }
+  .shadow-project{
+    text-shadow:4px 3px 0px rgb(71 85 105 / 61% );
   }
   .shadow-slate-lg{
     box-shadow: 0 10px 15px -3px #22006155, 0 4px 6px -2px #aa41ff33;

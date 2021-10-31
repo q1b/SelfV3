@@ -1,4 +1,5 @@
 import { Rive ,Layout, Fit, Alignment } from "rive-js";
+
 const button = document.getElementById("toggle");
 
 function updateCanvas(element, width, height) {
