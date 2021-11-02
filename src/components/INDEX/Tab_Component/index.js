@@ -1,7 +1,7 @@
 // Get relevant elements and collections
 const tabbed = document.querySelector(".tabbed");
 const tablist = tabbed.querySelector("ul");
-const tabs = tablist.querySelectorAll("a");
+const tabs = tablist.querySelectorAll("button");
 const panels = tabbed.querySelectorAll('[id^="section"]');
 let animationEnter = [];
 let panelsAnimationEnter = [];

@@ -39,7 +39,7 @@ html {
   -o-tab-size: 4;
      tab-size: 4;
   /* 3 */
-  font-family: Flow;
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   /* 4 */
 }
 
@@ -120,7 +120,7 @@ code,
 kbd,
 samp,
 pre {
-  font-family: Flow;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   /* 1 */
   font-size: 1em;
   /* 2 */
@@ -1077,11 +1077,11 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 
 .font-heading{
-  font-family: Flow;
+  font-family: Skranji, cursive;
 }
 
 .font-p{
-  font-family: Flow;
+  font-family: Jua, sans-serif;
 }
 
 .text-xl{
@@ -2299,7 +2299,7 @@ abbr[title] {
 .dark .dark\:prose-theme-slate :where(h1):not(:where([class~="not-prose"] *)){
   text-shadow: 2px 2px 1px #f1f5f977;
   color: #f1f5f9;
-  font-family: Flow;
+  font-family: Skranji, cursive;
   font-weight: 800;
 }
 
@@ -2326,7 +2326,7 @@ abbr[title] {
 }
 
 .dark .dark\:prose-theme-slate :where(h2):not(:where([class~="not-prose"] *)){
-  font-family: Flow;
+  font-family: Skranji, cursive;
   color: #e2e8f0;
   font-weight: 700;
 }
@@ -2354,7 +2354,7 @@ abbr[title] {
 }
 
 .dark .dark\:prose-theme-slate :where(h3):not(:where([class~="not-prose"] *)){
-  font-family: Flow;
+  font-family: Skranji, cursive;
   color: #e2e8f0;
   font-weight: 600;
 }
@@ -2382,7 +2382,7 @@ abbr[title] {
 }
 
 .dark .dark\:prose-theme-slate :where(h4):not(:where([class~="not-prose"] *)){
-  font-family: Flow;
+  font-family: Skranji, cursive;
   color: #e2e8f0;
   font-weight: 600;
 }
@@ -2412,12 +2412,12 @@ abbr[title] {
 .dark .dark\:prose-theme-slate :where(p):not(:where([class~="not-prose"] *)){
   color: #64748bBB;
   letter-spacing: 1px;
-  font-family: Flow;
+  font-family: Jua, sans-serif;
 }
 
 .dark .dark\:prose-theme-slate :where(p strong):not(:where([class~="not-prose"] *)){
   color: #64748bBB;
-  font-family: Flow;
+  font-family: Jua, sans-serif;
   font-weight: 600;
 }
 
@@ -2523,7 +2523,7 @@ abbr[title] {
 .dark .prose-theme-slate :where(.warning.custom-block):not(:where([class~="not-prose"] *)) p.dark\:custom-block-title{
   margin-top: 0px;
   margin-bottom: 6px;
-  font-family: Flow;
+  font-family: JetBrains Mono, monospace;
   font-weight: 700;
   color: #fb923c;
 }
@@ -2531,7 +2531,7 @@ abbr[title] {
 .dark .dark\:prose-theme-slate :where(.warning.custom-block):not(:where([class~="not-prose"] *)) p{
   margin-top: 0px;
   margin-bottom: 0px;
-  font-family: Flow;
+  font-family: JetBrains Mono, monospace;
   color: #f59e0b;
   opacity: 1;
   font-weight: 500;
@@ -2590,7 +2590,7 @@ abbr[title] {
 }
 
 .dark .dark\:prose-theme-slate :where(pre code):not(:where([class~="not-prose"] *)){
-  font-family: Flow;
+  font-family: JetBrains Mono, monospace;
 }
 
 .dark .dark\:prose-theme-slate :where(pre code):not(:where([class~="not-prose"] *))::before{

@@ -113,14 +113,9 @@ module.exports = {
         'swift': 'cubic-bezier(0.175,0.885,0.32,1.275)',
       },
       fontFamily: {
-        // code: 'JetBrains Mono, monospace',
-        // p:'Jua, sans-serif',
-        // heading:'Skranji, cursive',
-        sans:'Flow',
-        mono:'Flow',
-        code:'Flow',
-        p:'Flow',
-        heading:'Flow',
+        code: 'JetBrains Mono, monospace',
+        p:'Jua, sans-serif',
+        heading:'Skranji, cursive',
         flow: 'Flow',
       },
       typography: (theme) => ({
