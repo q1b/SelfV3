@@ -3,17 +3,19 @@ import Header from "../components/INDEX/Header/Nav.astro"
 import Head from "../components/INDEX/Header/Head.astro"
 import Model from "../components/INDEX/Header/Model/index.astro"
 import Profile from "../components/INDEX/Profile.astro"
+import TabComp from "../components/INDEX/Tab_Component/index.astro"
 ---
 <html lang="en">
   <Head/>
   <body class="">
     <div class="flex flex-col items-center w-full min-h-screen transition-colors duration-500 dark:bg-white bg-slate-1000 gap-y-6 sm:gap-y-10 md:gap-y-11 lg:gap-y-12">
-    <Header/>
+    <Header />
     <main class="flex flex-col items-center justify-center w-full max-w-5xl pt-6 pb-16 transition-colors duration-500 bg-slate-1000 dark:bg-white">
         <Profile/>
         <svg class="w-full sm:mt-10 " width="1275" height="94" viewBox="0 0 1275 94" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path class="stroke-white dark:stroke-slate-800" d="M0 3H117.858C120.51 3 123.054 4.05357 124.929 5.92893L167.929 48.9289C171.834 52.8342 178.166 52.8342 182.071 48.9289L225.071 5.92893C226.946 4.05357 229.49 3 232.142 3H280.858C283.51 3 286.054 4.05357 287.929 5.92893L296.429 14.4289C300.334 18.3342 306.666 18.3342 310.571 14.4289L314.929 10.0711C318.834 6.16582 325.166 6.16582 329.071 10.0711L406.929 87.9289C410.834 91.8342 417.166 91.8342 421.071 87.9289L498.929 10.0711C502.834 6.16583 509.166 6.16583 513.071 10.0711L532.929 29.9289C536.834 33.8342 543.166 33.8342 547.071 29.9289L566.929 10.0711C570.834 6.16583 577.166 6.16582 581.071 10.0711L585.429 14.4289C589.334 18.3342 595.666 18.3342 599.571 14.4289L608.071 5.92893C609.946 4.05357 612.49 3 615.142 3H648.858C651.51 3 654.054 4.05357 655.929 5.92893L698.929 48.9289C702.834 52.8342 709.166 52.8342 713.071 48.9289L745.75 16.25C748.649 13.3505 753.351 13.3505 756.25 16.25V16.25C759.149 19.1495 763.851 19.1495 766.75 16.25L769.071 13.9289C770.946 12.0536 773.49 11 776.142 11H791.858C794.51 11 797.054 9.94643 798.929 8.07107L801.071 5.92893C802.946 4.05357 805.49 3 808.142 3H858.858C861.51 3 864.054 4.05357 865.929 5.92893L926.071 66.0711C927.946 67.9464 930.49 69 933.142 69H978C983.523 69 988 64.5228 988 59V31.5C988 25.9772 992.477 21.5 998 21.5H1028.5C1034.02 21.5 1038.5 25.9772 1038.5 31.5V31.8579C1038.5 40.7669 1049.27 45.2286 1055.57 38.9289L1088.57 5.92893C1090.45 4.05357 1092.99 3 1095.64 3H1154.5H1275" stroke-width="5" />
         </svg>
+          <TabComp />
     </main>
     <Model/>
     </div>
@@ -152,159 +154,9 @@ navCloseButton.addEventListener('click',()=>{
   animateNav()
 });
     </script>
-    <script type="module" >
-      import { annotate } from 'rough-notation';
-      const elementsToHighlight = document.querySelectorAll('#annotate-highlight');
-      elementsToHighlight.forEach((e)=>{
-        const annotation = annotate(e, { type: 'highlight' , color: e.dataset.color });
-        setTimeout(() => {annotation.show();}, 1000);
-      })
+    <script src={Astro.resolve("../scripts/highlight.js")} type="module" >
     </script>
-    <script type="module" >
-    import { Rive ,Layout, Fit, Alignment } from "rive-js";
-
-const button = document.getElementById("toggle");
-
-function updateCanvas(element, width, height) {
-  const ratio = Math.ceil(window.devicePixelRatio);
-  let canvas = element;
-  canvas.width = width * ratio;
-  canvas.height = height * ratio;
-  canvas.style.width = `${width}px`;
-  canvas.style.height = `${height}px`;
-  canvas.getContext("2d").setTransform(ratio, 0, 0, ratio, 0, 0);
-}
-
-let layout = new Layout({
-  fit: Fit.Contain,
-  alignment: Alignment.Center,
-});
-
-const r = new Rive({
-  src: "/assets/main.riv",
-  canvas: document.getElementById("themeSwitchButton"),
-  autoplay: true,
-  artboard: "SunToMoon",
-  layout: layout,
-  stateMachines: "Toggle",
-  onLoad: (_) => {
-    updateCanvas(document.getElementById("themeSwitchButton"), 39, 39);
-    if (localStorage.theme === "dark") {
-      r.stateMachineInputs("Toggle")[0].value = true;
-    } else {
-      r.stateMachineInputs("Toggle")[0].value = false;
-    }
-    button.onclick = () => {
-      if (!r.stateMachineInputs("Toggle")[0].value) {
-        document.documentElement.classList.add("dark");
-        localStorage.theme = "dark";
-        r.stateMachineInputs("Toggle")[0].value =
-          !r.stateMachineInputs("Toggle")[0].value;
-      } else {
-        document.documentElement.classList.remove("dark");
-        localStorage.theme = "light";
-        r.stateMachineInputs("Toggle")[0].value =
-          !r.stateMachineInputs("Toggle")[0].value;
-      }
-    };
-  },
-});
-
-const navSwitchButton = document.querySelector("#navSwitchButton");
-const nav = new Rive({
-  src: "/assets/main.riv",
-  canvas: document.querySelector("#navswitch"),
-  autoplay: true,
-  artboard: "Nav",
-  stateMachines: "switch",
-  onLoad: (_) => {
-    updateCanvas(document.getElementById("navswitch"), 48, 36);
-    navSwitchButton.onclick = () => {
-      nav.stateMachineInputs("switch")[0].fire();
-    };
-  },
-});
-
-const homeIcon = document.querySelector("#homeIconContainer");
-const homeM = window.innerWidth >= 624 ? document.querySelector("#homeIcon") : document.querySelector("#homeIconMobile")
-const homeSize = window.innerWidth >= 624 ? { width: 63.99,height: 63.99 } : { width: 24, height: 24 } ;
-const home = new Rive({
-  src: "/assets/main.riv",
-  canvas: homeM,
-  autoplay: true,
-  artboard: "Home",
-  stateMachines: "switch",
-  onLoad: (_) => {
-    updateCanvas(homeM, homeSize.width, homeSize.height);
-    homeIcon.onmouseenter = () => {
-      home.stateMachineInputs("switch")[0].fire();
-    };
-    homeIcon.onmouseleave = () => {
-      home.stateMachineInputs("switch")[0].fire();
-    };
-  },
-});
-
-const msgIcon = document.querySelector("#msgIconContainer");
-const msgM = window.innerWidth >= 624 ? document.querySelector("#msgIcon") : document.querySelector("#msgIconMobile")
-const msgSize = window.innerWidth >= 624 ? { width: 63.99,height: 63.99 } : { width: 24, height: 24 } ;
-const msg = new Rive({
-  src: "/assets/main.riv",
-  canvas: msgM,
-  autoplay: true,
-  artboard: "Chat",
-  stateMachines: "switch",
-  onLoad: (_) => {
-    updateCanvas(msgM, msgSize.width, msgSize.height);
-    msgIcon.onmouseenter = () => {
-      msg.stateMachineInputs("switch")[0].fire();
-    };
-    msgIcon.onmouseleave = () => {
-      msg.stateMachineInputs("switch")[0].fire();
-    };
-  },
-});
-const notesIcon = document.querySelector("#notesIconContainer");
-const notesM = window.innerWidth >= 624 ? document.querySelector("#notesIcon") : document.querySelector("#notesIconMobile")
-const notesSize = window.innerWidth >= 624 ? { width:51.5475, height:79.435862069 } : { width: 20.619, height: 31.774344827 } ;
-const notes = new Rive({
-  src: "/assets/main.riv",
-  canvas: notesM,
-  autoplay: true,
-  artboard: "Notes",
-  stateMachines: "switch",
-  onLoad: (_) => {
-    updateCanvas(notesM, notesSize.width, notesSize.height );
-    notesIcon.onmouseenter = () => {
-      notes.stateMachineInputs("switch")[0].fire();
-    };
-    notesIcon.onmouseleave = () => {
-      notes.stateMachineInputs("switch")[0].fire();
-    };
-  },
-});
-const docsIcon = document.querySelector("#docsIconContainer");
-const docsM = window.innerWidth >= 624 ? document.querySelector("#docsIcon") : document.querySelector("#docsIconMobile")
-const docsSize = window.innerWidth >= 624 ? { width: 234, height: 70  } : { width: 78, height: 23.340518018 } ;
-
-const docs = new Rive({
-  src: "/assets/main.riv",
-  canvas: docsM,
-  autoplay: true,
-  artboard: "Docs",
-  stateMachines: "switch",
-  onLoad: (_) => {
-    updateCanvas( docsM, docsSize.width,docsSize.height );
-    docsIcon.onmouseenter = () => {
-      docs.stateMachineInputs("switch")[0].value =
-        !docs.stateMachineInputs("switch")[0].value;
-    };
-    docsIcon.onmouseleave = () => {
-      docs.stateMachineInputs("switch")[0].value =
-        !docs.stateMachineInputs("switch")[0].value;
-    };
-  },
-});
+    <script src={Astro.resolve("../scripts/rive.js")} type="module" >
     </script>
   </body>
 </html>

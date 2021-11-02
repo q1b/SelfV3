@@ -1,0 +1,41 @@
+---
+const { items } = Astro.props;
+// const listItemClasses  = "text-silk-white hover:bg-indigo-400 hover:shadow-inner active:bg-indigo-800 active:shadow-md p-0.5 rounded-md"; 
+function simpleArrayIterator(input) {
+  let Len = input.length;
+  let index = 0;
+  const arrayIterator = {
+    next: function() {
+      let result;
+      let value = input[index];
+      if ( index < Len - 1 ) {
+        result = {
+          value:value,
+          isEnd:false,
+        }
+        index += 1;
+        return result;
+      }
+      return {
+        value:value,
+        isEnd: true
+      }
+    }
+  };
+  return arrayIterator;
+}
+const iterate = simpleArrayIterator(items);
+let isEnd = false;
+
+---
+
+<ul class='p-2 flex flex-col gap-y-2'>
+  <li class='flex flex-col' >
+    <p class='' > I am Title Item </p>
+    <ul class='pl-1'>
+      <li class='list-item'>
+        <p> I am sub Item </p> 
+      </li>
+    </ul>
+  </li>
+</ul>

@@ -1,0 +1,12 @@
+---
+const { uid, title, link }= Astro.props;
+const visualClasses = "text-slate-400 font-jetMono truncate pl-1 py-0.5 rounded-md transition-colors duration-300"
+const shadowClasses = " before:shadow-md before:absolute before:inset-0 before:duration-700  before:rounded-md before:opacity-30 before:transition-opacity before:ease-in-out"
+const listClasses = visualClasses+shadowClasses;
+---
+  <li class="relative flex flex-col" >
+    <a href={link} class="relative">
+      <p id={uid} class={listClasses} >{title}</p>
+    </a>
+    <slot/> 
+  </li>

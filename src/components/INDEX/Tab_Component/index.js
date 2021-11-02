@@ -4,6 +4,9 @@ const tablist = tabbed.querySelector("ul");
 const tabs = tablist.querySelectorAll("a");
 const panels = tabbed.querySelectorAll('[id^="section"]');
 let animationEnter = [];
+let panelsAnimationEnter = [];
+let Animation_Duration = 400;
+let Animation_Gap = 100;
 // The tab switching function
 const switchTab = (oldTab, newTab) => {
   newTab.focus();
@@ -12,12 +15,15 @@ const switchTab = (oldTab, newTab) => {
   // Set the selected state
   newTab.setAttribute("aria-selected", "true");
 
-  newTab.classList.add("shadow-project", "font-semibold");
-  newTab.classList.remove("text-white/40");
+  onActiveClasses = ["text-white","dark\:text-purple-600","dark\:dark-shadow-project","shadow-project","font-semibold"]
+  onInactiveClasses = ["text-slate-500","dark\:text-purple-400"]
+
+  newTab.classList.add(...onActiveClasses);
+  newTab.classList.remove(...onInactiveClasses);
   oldTab.removeAttribute("aria-selected");
   oldTab.setAttribute("tabindex", "-1");
-  oldTab.classList.add("text-white/40");
-  oldTab.classList.remove("shadow-project", "font-semibold");
+  oldTab.classList.add(...onInactiveClasses);
+  oldTab.classList.remove(...onActiveClasses);
 
   // Get the indices of the new and old tabs to find the correct
   // tab panels to show and hide
@@ -26,19 +32,18 @@ const switchTab = (oldTab, newTab) => {
 
   if (Math.sign(oldIndex - index) === -1) {
     // Left To Right Direction
-    if (animationEnter[index] === undefined) {
       animationEnter = panels[oldIndex].animate(
         {
           transform: ["translateX(0px)", "translateX(-40px)"],
           opacity: [1, 0],
         },
         {
-          duration: 400,
+          duration: Animation_Duration,
           fill: "both",
           easing: "cubic-bezier(0.1, 0.32, 0, 1.08)",
         },
       )
-      animationEnter.onfinish = function () {
+      setTimeout(()=>{
         panels[oldIndex].style.display = "none";
         panels[index].style.display = "block";
         panels[index].animate(
@@ -52,35 +57,19 @@ const switchTab = (oldTab, newTab) => {
             easing: "cubic-bezier(0.6, 0.01, 0.01, 1.29)",
           },
         );
-      }
-    } else {
-      animationEnter.play();
-      animationEnter.onfinish = function () {
-        panels[oldIndex].style.display = "none";
-        panels[index].style.display = "block";
-        panels[index].animate(
-          {
-            transform: ["translateX(40px)", "translateX(0px)"],
-            opacity: [0, 1],
-          },
-          {
-            duration: 250,
-            fill: "both",
-            easing: "cubic-bezier(0.6, 0.01, 0.01, 1.29)",
-          },
-        );
-      }
-    }
+      }, Animation_Duration - Animation_Gap );
   } else {
     // Right To Left Direction
     panels[oldIndex].animate(
       { transform: ["translateX(0px)", "translateX(40px)"], opacity: [1, 0] },
       {
-        duration: 400,
+        duration: Animation_Duration,
         fill: "both",
         easing: "cubic-bezier(0.1, 0.32, 0, 1.08)",
       },
-    ).onfinish = function () {
+    )
+    setTimeout(()=>{
+
       panels[oldIndex].style.display = "none";
       panels[index].style.display = "block";
       panels[index].animate(
@@ -94,7 +83,7 @@ const switchTab = (oldTab, newTab) => {
           easing: "cubic-bezier(0.6, 0.01, 0.01, 1.29)",
         },
       );
-    };
+    },Animation_Duration-Animation_Gap);
   }
 };
 

@@ -1,0 +1,27 @@
+---
+import Head from "../components/INDEX/Header/Head.astro"
+import ThemeBtn from "../components/INDEX/Header/ThemeBtn.astro"
+import NavBtn from "../components/INDEX/Header/NavBtn.astro"
+import SideBar from "../components/Projects/Sidebar.astro"
+const {content} = Astro.props
+// const content = Astro.fetchContent("../pages/markdown.md");
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <Head isMarkdown={true} />
+</head>
+<body>
+  <section class="relative p-2 bg-white dark:bg-slate-1000 transition-colors grid gap-x-4 grid-cols-12 w-full h-screen max-h-screen">
+    <NavBtn clx="md:hidden absolute bottom-6 right-6" />   
+    <aside id="SideBarContainer" class="md:col-span-3 lg:col-span-2 hidden col-span-full -translate-x-full sm:translate-x-0 md:block bg-transparent rounded-lg overflow-y-auto">
+      <SideBar content={content}  />
+    </aside>
+    <main id="docsScrollArea" class="project-scrollbar relative prose prose-sm sm:prose md:prose-lg lg:prose-xl p-6 bg-slate-100 overflow-y-scroll border dark:border-slate-800 dark:prose-theme-slate col-start-1 md:col-start-4 lg:col-start-3 col-end-13 dark:bg-slate-900 rounded-lg transition-colors duration-200">
+      <ThemeBtn clx="absolute right-4 top-4" />
+      <slot/>
+    </main>
+  </section>
+  <script src={Astro.resolve("../scripts/ThemeToggle.js")} type="module" ></script>
+</body>
+</html>

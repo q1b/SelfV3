@@ -1,0 +1,8 @@
+---
+const { number } = Astro.props; 
+---
+<li class="">
+  <a class="rounded-md px-2 py-1 focus-within:ring-2 focus:outline-none dark:text-purple-600 font-semibold dark:dark-shadow-project" href={'#section'+number} >
+    <slot/>
+  </a>
+</li>
