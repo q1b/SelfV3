@@ -76,8 +76,10 @@ window.addEventListener('DOMContentLoaded',()=>{
             if( intersectingH1Element !== undefined ){
               document.getElementById(intersectingH1Element.id+'-link').classList.add(...inActiveClassH1);
               document.getElementById(intersectingH1Element.id+'-link').classList.remove(...activeClassH1);
-              document.getElementById(intersectingH2Element.id+'-link').classList.add(...inActiveClassH2);
-              document.getElementById(intersectingH2Element.id+'-link').classList.remove(...activeClassH2);
+              if(intersectingH2Element !== undefined ){
+                document.getElementById(intersectingH2Element.id+'-link').classList.add(...inActiveClassH2);
+                document.getElementById(intersectingH2Element.id+'-link').classList.remove(...activeClassH2);
+              }
             }
             intersectingH1Element = element.target
           }
