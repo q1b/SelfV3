@@ -45,7 +45,7 @@ const switchTab = (oldTab, newTab) => {
       )
       setTimeout(()=>{
         panels[oldIndex].style.display = "none";
-        panels[index].style.display = "block";
+        panels[index].style.display = "grid";
         panels[index].animate(
           {
             transform: ["translateX(40px)", "translateX(0px)"],
@@ -71,7 +71,7 @@ const switchTab = (oldTab, newTab) => {
     setTimeout(()=>{
 
       panels[oldIndex].style.display = "none";
-      panels[index].style.display = "block";
+      panels[index].style.display = "grid";
       panels[index].animate(
         {
           transform: ["translateX(-40px)", "translateX(0px)"],
@@ -145,4 +145,4 @@ Array.prototype.forEach.call(panels, (panel, i) => {
 // Initially activate the first tab and reveal the first tab panel
 tabs[0].removeAttribute("tabindex");
 tabs[0].setAttribute("aria-selected", "true");
-panels[0].style.display = "block";
+panels[0].style.display = "grid";
