@@ -1,12 +1,15 @@
 ---
+//  href={`#section${index+1}`}
 const Tab_Items = ["Best","Vue","Svelte"]
+let  onActiveClasses ="text-white dark:text-purple-600 dark:dark-shadow-project shadow-project font-semibold"
+let  onInactiveClasses ="text-slate-500 dark:text-purple-400"
 ---
 <ul class="flex place-content-around w-full font-heading gap-x-4 text-lg text-white tracking-wider">
   {Tab_Items.map((item,index)=>(
   <li class="">
-    <a class="rounded-md px-2 py-1 focus-within:ring-2 focus:outline-none text-slate-500 dark:text-purple-400 transition-colors" href={`#section${index+1}`}>
+    <button class={`rounded-md px-2 py-1 focus-within:ring-2 focus:outline-none ${index===0 ? onActiveClasses : onInactiveClasses} bg-slate-100 transition-colors`} >
       {item}
-    </a>
+    </button>
   </li>
   ))}
 </ul>

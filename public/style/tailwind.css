@@ -39,7 +39,7 @@ html {
   -o-tab-size: 4;
      tab-size: 4;
   /* 3 */
-  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-family: Flow;
   /* 4 */
 }
 
@@ -120,7 +120,7 @@ code,
 kbd,
 samp,
 pre {
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-family: Flow;
   /* 1 */
   font-size: 1em;
   /* 2 */
@@ -602,10 +602,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   display: grid;
 }
 
-.\!grid{
-  display: grid !important;
-}
-
 .list-item{
   display: list-item;
 }
@@ -678,10 +674,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   width: 7rem;
 }
 
-.w-\[640px\]{
-  width: 640px;
-}
-
 .w-0{
   width: 0px;
 }
@@ -696,10 +688,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .w-8{
   width: 2rem;
-}
-
-.w-\[320px\]{
-  width: 320px;
 }
 
 .min-w-full{
@@ -1029,6 +1017,11 @@ Ensure the default browser behavior of the `hidden` attribute.
   padding-right: 0.25rem;
 }
 
+.py-10{
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+}
+
 .px-2{
   padding-left: 0.5rem;
   padding-right: 0.5rem;
@@ -1037,11 +1030,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .py-1{
   padding-top: 0.25rem;
   padding-bottom: 0.25rem;
-}
-
-.py-10{
-  padding-top: 2.5rem;
-  padding-bottom: 2.5rem;
 }
 
 .pt-6{
@@ -1084,12 +1072,16 @@ Ensure the default browser behavior of the `hidden` attribute.
   vertical-align: middle;
 }
 
+.font-flow{
+  font-family: Flow;
+}
+
 .font-heading{
-  font-family: Skranji, cursive;
+  font-family: Flow;
 }
 
 .font-p{
-  font-family: Jua, sans-serif;
+  font-family: Flow;
 }
 
 .text-xl{
@@ -2307,7 +2299,7 @@ abbr[title] {
 .dark .dark\:prose-theme-slate :where(h1):not(:where([class~="not-prose"] *)){
   text-shadow: 2px 2px 1px #f1f5f977;
   color: #f1f5f9;
-  font-family: Skranji, cursive;
+  font-family: Flow;
   font-weight: 800;
 }
 
@@ -2334,7 +2326,7 @@ abbr[title] {
 }
 
 .dark .dark\:prose-theme-slate :where(h2):not(:where([class~="not-prose"] *)){
-  font-family: Skranji, cursive;
+  font-family: Flow;
   color: #e2e8f0;
   font-weight: 700;
 }
@@ -2362,7 +2354,7 @@ abbr[title] {
 }
 
 .dark .dark\:prose-theme-slate :where(h3):not(:where([class~="not-prose"] *)){
-  font-family: Skranji, cursive;
+  font-family: Flow;
   color: #e2e8f0;
   font-weight: 600;
 }
@@ -2390,7 +2382,7 @@ abbr[title] {
 }
 
 .dark .dark\:prose-theme-slate :where(h4):not(:where([class~="not-prose"] *)){
-  font-family: Skranji, cursive;
+  font-family: Flow;
   color: #e2e8f0;
   font-weight: 600;
 }
@@ -2420,12 +2412,12 @@ abbr[title] {
 .dark .dark\:prose-theme-slate :where(p):not(:where([class~="not-prose"] *)){
   color: #64748bBB;
   letter-spacing: 1px;
-  font-family: Jua, sans-serif;
+  font-family: Flow;
 }
 
 .dark .dark\:prose-theme-slate :where(p strong):not(:where([class~="not-prose"] *)){
   color: #64748bBB;
-  font-family: Jua, sans-serif;
+  font-family: Flow;
   font-weight: 600;
 }
 
@@ -2531,7 +2523,7 @@ abbr[title] {
 .dark .prose-theme-slate :where(.warning.custom-block):not(:where([class~="not-prose"] *)) p.dark\:custom-block-title{
   margin-top: 0px;
   margin-bottom: 6px;
-  font-family: JetBrains Mono, monospace;
+  font-family: Flow;
   font-weight: 700;
   color: #fb923c;
 }
@@ -2539,7 +2531,7 @@ abbr[title] {
 .dark .dark\:prose-theme-slate :where(.warning.custom-block):not(:where([class~="not-prose"] *)) p{
   margin-top: 0px;
   margin-bottom: 0px;
-  font-family: JetBrains Mono, monospace;
+  font-family: Flow;
   color: #f59e0b;
   opacity: 1;
   font-weight: 500;
@@ -2598,7 +2590,7 @@ abbr[title] {
 }
 
 .dark .dark\:prose-theme-slate :where(pre code):not(:where([class~="not-prose"] *)){
-  font-family: JetBrains Mono, monospace;
+  font-family: Flow;
 }
 
 .dark .dark\:prose-theme-slate :where(pre code):not(:where([class~="not-prose"] *))::before{
@@ -3193,12 +3185,12 @@ abbr[title] {
     width: auto;
   }
 
-  .sm\:w-16{
-    width: 4rem;
-  }
-
   .sm\:w-\[600px\]{
     width: 600px;
+  }
+
+  .sm\:w-16{
+    width: 4rem;
   }
 
   .sm\:max-w-\[calc\(100\%-60px\)\]{
@@ -3257,14 +3249,14 @@ abbr[title] {
     padding-bottom: 0.25rem;
   }
 
-  .sm\:text-2xl{
-    font-size: 1.5rem;
-    line-height: 2rem;
-  }
-
   .sm\:text-lg{
     font-size: 1.125rem;
     line-height: 1.75rem;
+  }
+
+  .sm\:text-2xl{
+    font-size: 1.5rem;
+    line-height: 2rem;
   }
 }
 
@@ -3522,10 +3514,6 @@ abbr[title] {
 
   .md\:w-44{
     width: 11rem;
-  }
-
-  .md\:w-\[640px\]{
-    width: 640px;
   }
 
   .md\:w-\[720px\]{

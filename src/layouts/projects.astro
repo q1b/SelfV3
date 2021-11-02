@@ -17,7 +17,7 @@ const {content} = Astro.props
     <aside id="SideBarContainer" class="md:col-span-3 lg:col-span-2 hidden col-span-full -translate-x-full sm:translate-x-0 md:block bg-transparent rounded-lg overflow-y-auto">
       <SideBar content={content}  />
     </aside>
-    <main id="docsScrollArea" class="project-scrollbar relative prose prose-sm sm:prose md:prose-lg lg:prose-xl p-6 bg-slate-100 overflow-y-scroll border dark:border-slate-800 dark:prose-theme-slate col-start-1 md:col-start-4 lg:col-start-3 col-end-13 dark:bg-slate-900 rounded-lg transition-colors duration-200">
+    <main id="docsScrollArea" class="font-flow project-scrollbar relative prose prose-sm sm:prose md:prose-lg lg:prose-xl p-6 bg-slate-100 overflow-y-scroll border dark:border-slate-800 dark:prose-theme-slate col-start-1 md:col-start-4 lg:col-start-3 col-end-13 dark:bg-slate-900 rounded-lg transition-colors duration-200">
       <ThemeBtn clx="absolute right-4 top-4" />
       <slot/>
     </main>
