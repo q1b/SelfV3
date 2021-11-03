@@ -26,17 +26,14 @@ const headers = content.astro?.headers;
   <script define:vars={{headers}} >
   let intersectingH1Element;
   let intersectingH2Element;
-  
+
   const activeClassH1 = ["text-blue-500","border-l-2","border-blue-400","before:opacity-100"];
   const activeClassH2 = ["text-blue-400","border-l-2","border-blue-400","before:opacity-100"];
-  
+
   const inActiveClassH1 = ["text-slate-700","before:opacity-30"];
   const inActiveClassH2 = ["text-slate-400","before:opacity-30"];
-  
+
   if(window.innerWidth>=764){
-    for (let index = 0; index < headers.length; index++) {
-      observer.observe(document.getElementById(headers[index]['slug']));
-    }
     let observer = new IntersectionObserver((entries, observer)=>{
       for (let index = 0; index < entries.length; index++) {
           let element = entries[index];
@@ -72,6 +69,9 @@ const headers = content.astro?.headers;
         threshold:[0,1]
       }
     );
+    for (let index = 0; index < headers.length; index++) {
+      observer.observe(document.getElementById(headers[index]['slug']));
+    }
   }
   </script>
   <script type="module" >
