@@ -223,15 +223,14 @@
 
   let intersectingH1Element;
   let intersectingH2Element;
-
+  let observer;
   const activeClassH1 = ["text-blue-500","border-l-2","border-blue-400","before:opacity-100"];
   const activeClassH2 = ["text-blue-400","border-l-2","border-blue-400","before:opacity-100"];
 
   const inActiveClassH1 = ["text-slate-700","before:opacity-30"];
   const inActiveClassH2 = ["text-slate-400","before:opacity-30"];
 
-  if(window.innerWidth>=764){
-    let observer = new IntersectionObserver((entries, observer)=>{
+    observer = new IntersectionObserver((entries, observer)=>{
       for (let index = 0; index < entries.length; index++) {
           let element = entries[index];
           if( element.isIntersecting ) {
@@ -263,14 +262,13 @@
       {
         root: document.getElementById('docsScrollArea'),
         rootMargin:'0px',
-        threshold:[0,1]
+        threshold:0
       }
     );
     for (let index = 0; index < headers.length; index++) {
       observer.observe(document.getElementById(headers[index]['slug']));
     }
-  }
   </script>
-  
+
 
 <script type="module" src="../assets/inline-module-7575c8f15140efe18d50955664e52e3a.454e1f09.js"></script></body></html>

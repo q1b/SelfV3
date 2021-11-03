@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "concurrently \"astro dev\" \"tailwindcss -i ./tailwind.css -c ./tailwind.config.js -o ./public/style/tailwind.css -w\" ",
     "b": "astro build",
-    "dev-b": "astro build && tailwindcss -i ./tailwind.css -o ./dist/style/tailwind.css --minify",
+    "build": "astro build && tailwindcss -i ./tailwind.css -o ./dist/style/tailwind.css --minify",
     "preview": "astro preview"
   },
   "devDependencies": {
