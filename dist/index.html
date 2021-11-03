@@ -1,0 +1,644 @@
+<html lang="en"><head>
+
+    
+<!-- Global Metadata -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="alternate icon" type="image/x-icon" href="/favicon.ico">
+<link rel="sitemap" href="/sitemap.xml">
+
+<!-- Global CSS -->
+<link rel="stylesheet" href="/style/tailwind.css">
+<link rel="stylesheet" href="/style/fonts.css">
+ 
+
+<!-- This is intentionally inlined to avoid FOUC -->
+<script>
+  const theme = localStorage.getItem('theme');
+  if (theme === 'dark') {
+      document.documentElement.classList.add('dark');
+  } else if ( !(window.matchMedia('(prefers-color-scheme: dark)').matches) ) {
+      localStorage.theme = "dark";
+      document.documentElement.classList.add("dark");
+  } else {
+      document.documentElement.classList.remove("dark");
+  }
+</script>
+
+    
+<title>asd</title>
+<meta name="keywords" content="WEB Developer and software Engineer, Mastered HTML, CSS, JavaScript, Vue and Basics of React yet Now,">
+<meta name="author" content="XSukhpreet">
+
+<!-- Page Metadata -->
+<link rel="canonical" href="http://selfv3.netlify.app/">
+
+<!-- Algolia docsearch language facet -->
+<!-- <meta name="docsearch:language" content="{lang}" /> -->
+
+<!-- OpenGraph Tags -->
+<meta property="og:title" content="asd">
+<meta property="og:type" content="article">
+<meta property="og:url" content="http://selfv3.netlify.app/">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://selfv3.netlify.app/default-og-image.png?v=1">
+<meta property="og:image:alt" content="Myself Sukhpreet Singh I have nothing to say about myself, But I would like to say that I am grateful for all the youtube videos and free resources like docs done very well online which help all of us to bring a change in society, really grateful for all of online educational stuff.">
+<meta name="description" property="og:description" content="Learning web faster together, as well Thinking about how to make learning faster.">
+<meta property="og:site_name" content="Postfolio Website Supri/Sukhp">
+
+<!-- Twitter Tags -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="XSukhpreet">
+<meta name="twitter:title" content="asd">
+<meta name="twitter:description" content="Learning web faster together, as well Thinking about how to make learning faster.">
+<meta name="twitter:image" content="http://selfv3.netlify.app/default-og-image.png?v=1">
+<meta name="twitter:image:alt" content="Myself Sukhpreet Singh I have nothing to say about myself, But I would like to say that I am grateful for all the youtube videos and free resources like docs done very well online which help all of us to bring a change in society, really grateful for all of online educational stuff.">
+
+
+  </head><body class="">
+    <div class="flex flex-col items-center w-full min-h-screen transition-colors duration-500 dark:bg-white bg-slate-1000 gap-y-6 sm:gap-y-10 md:gap-y-11 lg:gap-y-12">
+    
+<header class="flex items-center w-full max-w-5xl px-4 pt-6 bg-transparent gap-x-4">
+    <div id="Uni">
+      <svg width="39" height="39" class="flex-shrink-0 text-white" viewBox="0 0 39 39" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path class="fill-white dark:fill-[#F4ADFF] stroke-[#0085FF] dark:stroke-[#7000FF] stroke-[4] transition-colors" d="M36.1401 19.0701C36.1401 28.4975 28.4976 36.14 19.07 36.14C9.64251 36.14 2 28.4975 2 19.0701C2 9.64251 9.64251 2 19.07 2C-1.28576 22.3557 15.9976 39.2339 36.1401 19.0701Z" stroke-opacity="0.56"></path>
+        <path class="hidden dark:block fill-[#FFB0E9] stroke-[#FF00C7] stroke-[4] transition-colors" d="M36.1401 19.0701C36.1401 28.4975 28.4976 36.14 19.07 36.14C9.6425 36.14 2 28.4975 2 19.0701C2 9.64251 9.6425 2 19.07 2C-1.28576 22.3557 15.9976 39.2339 36.1401 19.0701Z" stroke-opacity="0.56"></path>
+        <path class="stroke-2 stroke-white dark:stroke-[#2B004E] transition-colors" d="M19.0698 27.9464C23.9721 27.9464 27.9462 23.9723 27.9462 19.0699C27.9462 14.1676 23.9721 10.1935 19.0698 10.1935C14.1675 10.1935 10.1934 14.1676 10.1934 19.0699C10.1934 23.9723 14.1675 27.9464 19.0698 27.9464Z"></path>
+      </svg>
+    </div>
+    <button id="navBigSwitchButton" class="flex-none flex-shrink-0 hidden w-full px-3 py-2 text-lg font-semibold leading-6 text-white duration-200 sm:w-auto dark:bg-purple-700 dark:hover:bg-purple-500 focus:ring focus:ring-offset-2 dark:focus:ring-offset-white dark:focus:ring-violet-500 focus:outline-none bg-blue-1000/30 hover:bg-blue-1000/50 rounded-xl sm:flex active:scale-105 ease-snappy transition-transform-colors gap-x-2">
+      <span class=""> Open Menu </span>
+      <span style="opacity: 1;" class="hidden sm:block text-gray-400 dark:text-purple-1000 text-sm leading-5 py-0.5 px-1.5 border border-slate-200 rounded-md">
+        <span class="sr-only">Press</span>
+        <kbd class="inline font-jetMono">
+          <abbr title="Control"> Ctrl </abbr>
+        </kbd>
+        <span class="sr-only">
+          and
+        </span>
+        <kbd class="inline font-jetMono">
+          <abbr title="Slash"> ∕ </abbr>
+        </kbd>
+        <span class="sr-only">
+         to Open Menu
+        </span>
+      </span>
+    </button>
+    <div class="w-full"></div>
+    
+<button id="toggle" class="flex-shrink-0 overflow-hidden rounded-full tab-highlight-none undefined">
+  <canvas id="themeSwitchButton" width="39" height="39"></canvas>
+</button>
+    <nav class="hidden sm:flex gap-x-4">
+      <!-- Notes -->
+      <a href="#" class="p-2 text-white transition-colors duration-200 rounded-md hover:bg-slate-700/40 dark:hover:bg-pink-100 dark:text-purple-600">
+        <svg width="20" height="24" viewBox="0 0 20 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M13.6471 22.5H5.21569H3C1.89543 22.5 1 21.6046 1 20.5V13.0021C1 12.3495 1.31842 11.7379 1.85307 11.3636L2.06876 11.2126C3.39432 10.2848 5.21569 11.2331 5.21569 12.8511V15.2006C5.21569 17.031 7.47072 17.8997 8.69876 16.5424L9.93253 15.1788C11.1354 13.8493 13.3452 14.6521 13.4141 16.4438L13.6471 22.5ZM13.6471 22.5H16.0517C17.1563 22.5 18.0517 21.6046 18.0517 20.5V3C18.0517 1.89543 17.1563 1 16.0517 1H13.2255M1 8.71034V3C1 1.89543 1.89543 1 3 1H13.2255M13.2255 1V12.3824" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </a>
+      <!-- Twitter Link -->
+      <a href="#" class="p-2 text-white transition-colors duration-200 rounded-md hover:bg-slate-700/40 dark:hover:bg-pink-100 dark:text-purple-600">
+        <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53a4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></g>
+        </svg>
+      </a>
+      <!-- Github Link -->
+      <a href="#" class="p-2 text-white transition-colors duration-200 rounded-md hover:bg-slate-700/40 dark:hover:bg-pink-100 dark:text-purple-600">
+        <svg width="22" height="24" viewBox="0 0 22 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M9.02114 20.5059C9.02104 20.3594 8.98875 20.2147 8.92655 20.0821C8.86435 19.9494 8.77376 19.8321 8.66119 19.7383C8.54862 19.6445 8.41682 19.5766 8.27512 19.5394C8.13341 19.5022 7.98526 19.4966 7.84114 19.5229C6.53114 19.7629 4.87814 19.7989 4.43914 18.5649C4.0559 17.6089 3.42114 16.7745 2.60214 16.1499C2.54351 16.118 2.48765 16.0812 2.43514 16.0399C2.36342 15.8511 2.23618 15.6883 2.07016 15.5732C1.90415 15.4581 1.70716 15.3959 1.50514 15.3949H1.50014C1.23578 15.3949 0.982185 15.4996 0.794792 15.6861C0.607399 15.8725 0.501459 16.1256 0.500137 16.3899C0.496137 17.2049 1.31014 17.7279 1.64114 17.9039C2.03112 18.2958 2.34449 18.757 2.56514 19.2639C2.93014 20.2869 3.98814 21.8399 7.03114 21.6399L7.03414 21.7379L7.03814 22.0059C7.03814 22.2712 7.14349 22.5255 7.33103 22.713C7.51857 22.9006 7.77292 23.0059 8.03814 23.0059C8.30335 23.0059 8.55771 22.9006 8.74524 22.713C8.93278 22.5255 9.03814 22.2712 9.03814 22.0059L9.03314 21.6879C9.02814 21.4979 9.02114 21.2239 9.02114 20.5059ZM19.6881 5.37994C19.7201 5.25494 19.7511 5.11594 19.7781 4.95994C19.9399 3.84554 19.799 2.70815 19.3701 1.66694C19.3161 1.53129 19.233 1.40909 19.1268 1.3089C19.0206 1.20872 18.8937 1.13296 18.7551 1.08694C18.3991 0.966936 17.0851 0.729936 14.5711 2.33694C12.4817 1.84526 10.3066 1.84526 8.21714 2.33694C5.71314 0.752936 4.40614 0.968936 4.05314 1.08194C3.91105 1.12603 3.78063 1.20137 3.67145 1.30242C3.56226 1.40348 3.47708 1.52768 3.42214 1.66594C2.98409 2.72722 2.84439 3.88803 3.01814 5.02294C3.04314 5.14994 3.06914 5.26894 3.09714 5.37694C2.26834 6.48057 1.82685 7.82683 1.84114 9.20694C1.83864 9.51449 1.853 9.82195 1.88414 10.1279C2.21814 14.7309 5.21814 16.1119 7.30814 16.5869C7.26276 16.7184 7.22339 16.8519 7.19014 16.9869C7.12662 17.2445 7.168 17.5167 7.30518 17.7437C7.44237 17.9707 7.66411 18.1339 7.92164 18.1974C8.17916 18.261 8.45137 18.2196 8.67838 18.0824C8.9054 17.9452 9.06862 17.7235 9.13214 17.4659C9.19579 17.1327 9.35896 16.8266 9.60014 16.5879C9.74563 16.4602 9.85091 16.293 9.90321 16.1066C9.95551 15.9202 9.95258 15.7226 9.89476 15.5378C9.83695 15.3531 9.72675 15.189 9.57752 15.0657C9.4283 14.9423 9.24648 14.865 9.05414 14.8429C5.60014 14.4479 4.10014 13.0409 3.87414 9.94394C3.84939 9.69874 3.83837 9.45236 3.84114 9.20594C3.82525 8.22249 4.15033 7.26387 4.76114 6.49294C4.82224 6.41273 4.88732 6.33563 4.95614 6.26194C5.07867 6.12488 5.16104 5.95669 5.19421 5.77586C5.22737 5.59503 5.21005 5.40856 5.14414 5.23694C5.0768 5.05667 5.02495 4.871 4.98914 4.68194C4.90771 4.14338 4.93457 3.59398 5.06814 3.06594C5.93729 3.31151 6.75527 3.71119 7.48314 4.24594C7.60342 4.32604 7.7395 4.37936 7.88218 4.40231C8.02486 4.42525 8.17081 4.41728 8.31014 4.37894C10.3313 3.8304 12.4622 3.83075 14.4831 4.37994C14.6232 4.41828 14.77 4.4258 14.9133 4.40198C15.0566 4.37815 15.193 4.32355 15.3131 4.24194C16.0379 3.70515 16.8527 3.30215 17.7191 3.05194C17.8517 3.56708 17.8813 4.10334 17.8061 4.62994C17.7699 4.83733 17.7133 5.04065 17.6371 5.23694C17.5712 5.40856 17.5539 5.59503 17.5871 5.77586C17.6202 5.95669 17.7026 6.12488 17.8251 6.26194C17.9031 6.34894 17.9801 6.44194 18.0491 6.52994C18.6555 7.28791 18.9749 8.23556 18.9511 9.20594C18.9528 9.46544 18.9401 9.72483 18.9131 9.98294C18.6931 13.0389 17.1881 14.4469 13.7181 14.8429C13.5256 14.8648 13.3435 14.9421 13.1941 15.0655C13.0446 15.189 12.9343 15.3531 12.8765 15.5381C12.8186 15.7231 12.8158 15.9209 12.8683 16.1074C12.9207 16.294 13.0263 16.4613 13.1721 16.5889C13.4207 16.8339 13.584 17.1522 13.6381 17.4969C13.706 17.7648 13.7373 18.0407 13.7311 18.3169V20.6499C13.7211 21.2979 13.7211 21.7829 13.7211 22.0059C13.7211 22.2712 13.8265 22.5255 14.014 22.713C14.2016 22.9006 14.4559 23.0059 14.7211 23.0059C14.9864 23.0059 15.2407 22.9006 15.4282 22.713C15.6158 22.5255 15.7211 22.2712 15.7211 22.0059C15.7211 21.7889 15.7211 21.3139 15.7311 20.6659V18.3159C15.7391 17.8739 15.6869 17.4329 15.5761 17.0049C15.5445 16.8644 15.5058 16.7256 15.4601 16.5889C16.9813 16.3361 18.3634 15.5517 19.3605 14.3753C20.3576 13.199 20.9049 11.707 20.9051 10.1649C20.9381 9.84636 20.9535 9.52621 20.9511 9.20594C20.9733 7.82473 20.5282 6.47653 19.6881 5.37994Z" fill="currentColor" stroke="currentColor"></path>
+        </svg>
+      </a>
+    </nav>
+    
+<button id="navSwitchButton" class="z-50 drop-shadow-lg sm:hidden">
+  <canvas id="navswitch" width="48" height="36"></canvas>
+</button>
+</header>
+    <main class="flex flex-col items-center justify-center w-full max-w-5xl pt-6 pb-16 transition-colors duration-500 bg-slate-1000 dark:bg-white">
+        <div class="flex flex-col gap-16 p-10 transition-colors md:flex-row hover:bg-slate-800/10 dark:hover:bg-indigo-400/10 rounded-xl">
+  <article id="background-circle" class="relative z-0 flex items-center justify-center flex-shrink-0 w-32 h-32 rounded-full bg-blue-gradient dark:bg-indigo-gradient lg:w-64 md:w-52 sm:w-44 lg:h-64 md:h-52 sm:h-44">
+    <div id="photo" class="relative z-10 rounded-full bg-blue-shadow dark:bg-indigo-shadow lg:w-56 md:w-44 sm:w-36 w-28 opacity-80 lg:h-56 md:h-44 sm:h-36 h-28" style="
+            background-position: top center;
+            background-size: cover;
+            background-image: url('https://raw.githubusercontent.com/sacarvy/AstroA/main/public/pic.jpeg');
+          "></div>
+  </article>
+  <article class="relative max-w-xl text-xl selection:text-[#0099ff] selection:bg-[hsla(210,100%,50%,0.2)]">
+    <h1 class="mb-6 text-4xl font-black text-white dark:text-slate-800">
+      Hi there, I'm
+      <span id="annotate-underline">Sukhpreet</span>
+      .
+    </h1>
+    <div class="mb-3 text-white dark:text-slate-600">
+      A 
+      <p class="inline text-blue-500 dark:text-slate-600">
+        <span id="annotate-highlight" data-color="rgb(59 130 246 / 0.1)">self&nbsp;taught&nbsp;developer</span>,
+      </p>
+      who learnt UI Engineering skills,
+      <br>
+      during the lockdown, and experimenting with it.
+    </div>
+    <div class="mb-3 text-white dark:text-slate-600">
+      <p class="inline text-indigo-500 dark:text-slate-600">
+        <span id="annotate-highlight" data-color="rgb(99 102 241 / 0.2)">
+          Playing&nbsp;Basketball
+        </span>,
+      </p>
+      <p class="inline dark:text-slate-600 text-violet-500 ">
+        <span id="annotate-highlight" data-color="rgb(139 92 246 / 0.2)">
+          writing&nbsp;code
+        </span>,
+      </p> and 
+      <p class="inline text-purple-500 dark:text-slate-600">
+        <span uid="yoga" id="annotate-highlight" data-color="rgb(168 85 247 / 0.2)">
+          practicing&nbsp;yoga
+        </span>
+      </p>
+      <br>
+      are some of my 
+      <p class="inline text-pink-500 dark:text-slate-600">
+        <span uid="freeTime" id="annotate-highlight" data-color="rgb(236 72 153 / 0.2)">
+          free&nbsp;time&nbsp;favorites
+        </span>.
+      </p>
+    </div>
+    <div class="mb-3 text-white dark:text-slate-600">
+      I believe in 
+      <p class="inline dark:text-slate-600 text-rose-500">
+      <span uid="vasudhaivaKutumbakam" id="annotate-highlight" data-color="rgb(244 63 94 / 0.2)">
+          vasudhaiva kutumbakam
+      </span>,
+      </p>
+      <br>
+      And I am ...
+    </div>
+  </article>
+</div>
+        <svg class="w-full sm:mt-10 " width="1275" height="94" viewBox="0 0 1275 94" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path class="stroke-white dark:stroke-slate-800" d="M0 3H117.858C120.51 3 123.054 4.05357 124.929 5.92893L167.929 48.9289C171.834 52.8342 178.166 52.8342 182.071 48.9289L225.071 5.92893C226.946 4.05357 229.49 3 232.142 3H280.858C283.51 3 286.054 4.05357 287.929 5.92893L296.429 14.4289C300.334 18.3342 306.666 18.3342 310.571 14.4289L314.929 10.0711C318.834 6.16582 325.166 6.16582 329.071 10.0711L406.929 87.9289C410.834 91.8342 417.166 91.8342 421.071 87.9289L498.929 10.0711C502.834 6.16583 509.166 6.16583 513.071 10.0711L532.929 29.9289C536.834 33.8342 543.166 33.8342 547.071 29.9289L566.929 10.0711C570.834 6.16583 577.166 6.16582 581.071 10.0711L585.429 14.4289C589.334 18.3342 595.666 18.3342 599.571 14.4289L608.071 5.92893C609.946 4.05357 612.49 3 615.142 3H648.858C651.51 3 654.054 4.05357 655.929 5.92893L698.929 48.9289C702.834 52.8342 709.166 52.8342 713.071 48.9289L745.75 16.25C748.649 13.3505 753.351 13.3505 756.25 16.25V16.25C759.149 19.1495 763.851 19.1495 766.75 16.25L769.071 13.9289C770.946 12.0536 773.49 11 776.142 11H791.858C794.51 11 797.054 9.94643 798.929 8.07107L801.071 5.92893C802.946 4.05357 805.49 3 808.142 3H858.858C861.51 3 864.054 4.05357 865.929 5.92893L926.071 66.0711C927.946 67.9464 930.49 69 933.142 69H978C983.523 69 988 64.5228 988 59V31.5C988 25.9772 992.477 21.5 998 21.5H1028.5C1034.02 21.5 1038.5 25.9772 1038.5 31.5V31.8579C1038.5 40.7669 1049.27 45.2286 1055.57 38.9289L1088.57 5.92893C1090.45 4.05357 1092.99 3 1095.64 3H1154.5H1275" stroke-width="5"></path>
+        </svg>
+          
+<section class="py-10 w-[calc(100%-40px)] flex flex-col gap-y-4"><h1 class="text-5xl font-heading text-white dark:text-purple-600 shadow-project dark:dark-shadow-project">Projects</h1><div class="tabbed flex flex-col items-center w-full sm:w-[600px] md:w-[720px] lg:w-[840px] pt-3">
+    
+<ul class="flex place-content-around w-full font-heading gap-x-4 text-lg text-white tracking-wider">
+  <li class="">
+    <button class="rounded-md px-2 py-1 focus-within:ring-2 focus:outline-none text-white dark:text-purple-600 dark:dark-shadow-project shadow-project font-semibold bg-slate-100 transition-colors">
+      Best
+    </button>
+  </li>
+<li class="">
+    <button class="rounded-md px-2 py-1 focus-within:ring-2 focus:outline-none text-slate-500 dark:text-purple-400 bg-slate-100 transition-colors">
+      Vue
+    </button>
+  </li>
+<li class="">
+    <button class="rounded-md px-2 py-1 focus-within:ring-2 focus:outline-none text-slate-500 dark:text-purple-400 bg-slate-100 transition-colors">
+      Svelte
+    </button>
+  </li>
+</ul>
+    
+<section class="font-heavy gap-x-4 grid-cols-1 pt-4 gap-y-12 md:grid-cols-2 md:gap-x-8 text-2xl text-white tracking-wider w-full" id="section1">
+    <article href="#" class="w-full flex flex-col items-center" style="">
+      <a href="" class="relative navItem group w-full h-64 rounded-lg transition-colors">
+      <div class="absolute inset-0 m-0 box-border">
+        <img class="w-0 h-0 max-w-full max-h-full min-w-full min-h-full object-cover block absolute inset-0 visible box-border rounded-lg m-auto p-0" sizes="100vw" src="https://rauno.xyz/_next/image?url=%2Fstatic%2Fuiwtf.png&amp;w=828&amp;q=75" alt="UIWTF"> 
+      </div>
+      <div class="absolute inset-0 bg-slate-900/30 transition-opacity opacity-0 group-hover:opacity-100 backdrop-blur-[1px] duration-300 rounded-lg shadow-white-lg dark:shadow-slate-lg" style="transition-timing-function: cubic-bezier(.2, .8, .2, 1);"></div>
+      <div class="absolute left-8 bottom-4 opacity-0 translate-y-4 group-hover:translate-y-0 group-hover:opacity-100 transition-opacity" style="
+        transition-property: opacity, transform;
+        transition-timing-function: cubic-bezier(0.4, 0.3, 0.7, 1);">
+        <h1 class="text-2xl font-bold text-white">Section 1</h1>
+        <p class="text-white w-full pr-20">It;s just a demo tag everything is in development</p>
+      </div>
+      </a>
+    </article>
+  </section>
+<section class="font-heavy gap-x-4 grid-cols-1 pt-4 gap-y-12 md:grid-cols-2 md:gap-x-8 text-2xl text-white tracking-wider w-full" id="section2">
+    <article href="#" class="w-full flex flex-col items-center" style="">
+      <a href="" class="relative navItem group w-full h-64 rounded-lg transition-colors">
+      <div class="absolute inset-0 m-0 box-border">
+        <img class="w-0 h-0 max-w-full max-h-full min-w-full min-h-full object-cover block absolute inset-0 visible box-border rounded-lg m-auto p-0" sizes="100vw" src="https://rauno.xyz/_next/image?url=%2Fstatic%2Fuiwtf.png&amp;w=828&amp;q=75" alt="UIWTF"> 
+      </div>
+      <div class="absolute inset-0 bg-slate-900/30 transition-opacity opacity-0 group-hover:opacity-100 backdrop-blur-[1px] duration-300 rounded-lg shadow-white-lg dark:shadow-slate-lg" style="transition-timing-function: cubic-bezier(.2, .8, .2, 1);"></div>
+      <div class="absolute left-8 bottom-4 opacity-0 translate-y-4 group-hover:translate-y-0 group-hover:opacity-100 transition-opacity" style="
+        transition-property: opacity, transform;
+        transition-timing-function: cubic-bezier(0.4, 0.3, 0.7, 1);">
+        <h1 class="text-2xl font-bold text-white">Section 2</h1>
+        <p class="text-white w-full pr-20">It's not a joke I am working not too hard to make this best but it just like that .</p>
+      </div>
+      </a>
+    </article>
+  </section>
+<section class="font-heavy gap-x-4 grid-cols-1 pt-4 gap-y-12 md:grid-cols-2 md:gap-x-8 text-2xl text-white tracking-wider w-full" id="section3">
+    <article href="#" class="w-full flex flex-col items-center" style="">
+      <a href="" class="relative navItem group w-full h-64 rounded-lg transition-colors">
+      <div class="absolute inset-0 m-0 box-border">
+        <img class="w-0 h-0 max-w-full max-h-full min-w-full min-h-full object-cover block absolute inset-0 visible box-border rounded-lg m-auto p-0" sizes="100vw" src="https://rauno.xyz/_next/image?url=%2Fstatic%2Fuiwtf.png&amp;w=828&amp;q=75" alt="UIWTF"> 
+      </div>
+      <div class="absolute inset-0 bg-slate-900/30 transition-opacity opacity-0 group-hover:opacity-100 backdrop-blur-[1px] duration-300 rounded-lg shadow-white-lg dark:shadow-slate-lg" style="transition-timing-function: cubic-bezier(.2, .8, .2, 1);"></div>
+      <div class="absolute left-8 bottom-4 opacity-0 translate-y-4 group-hover:translate-y-0 group-hover:opacity-100 transition-opacity" style="
+        transition-property: opacity, transform;
+        transition-timing-function: cubic-bezier(0.4, 0.3, 0.7, 1);">
+        <h1 class="text-2xl font-bold text-white">Section 3</h1>
+        <p class="text-white w-full pr-20">I am fan of learning and mostly I love that What ever I love is already there .</p>
+      </div>
+      </a>
+    </article>
+  </section>
+  </div></section>
+
+<!-- <script src={Astro.resolve("./index.js")} ></script> -->
+    </main>
+    
+<section id="nav-dialog" class="fixed inset-0 z-10 overflow-y-auto" role="dialog" aria-modal="true" aria-labelledby="nav-dialog">
+  <article class="min-h-screen px-4 text-center">
+    <div id="nav-dialog-overlay" class="fixed inset-0 bg-slate-1000 dark:bg-purple-400 opacity-80" aria-hidden="true">
+    </div>
+    <span class="inline-block h-screen align-middle" aria-hidden="true">
+      ​
+    </span>
+    <div id="nav-dialog-container" class="inline-block items-center justify-center w-full max-w-[calc(100%-20px)] sm:max-w-[calc(100%-60px)] md:max-w-[calc(100%-120px)] lg:max-w-[calc(10%+900px)] p-3 sm:p-10 my-8 overflow-hidden text-left align-middle bg-[hsl(206,100%,8%)]/50 dark:bg-[hsl(266,100%,4%)]/80 backdrop-blur shadow-lg rounded-2xl max-h-96 overflow-y-auto" style="--tw-shadow:0 -4px 6px -2px hsla(218, 30%, 60%, 0.05), 0 10px 15px -3px hsla(178, 50%, 50%, 0.1), 0 4px 6px -2px hsla(218, 30%, 60%, 0.05);">
+      <section class="grid grid-cols-1 sm:grid-cols-2 place-content-center gap-x-8">
+        <ul class="flex flex-col justify-center gap-y-6 sm:gap-y-12">
+          
+<li>
+  <h1 class="text-lg navItem sm:text-2xl text-sky-400 dark:text-purple-400 mb-8 font-medium leading-6" id="nav-dialog-title">Navigation</h1>
+  <ul class="grid grid-cols-1 gap-y-6 sm:gap-y-0 sm:grid-cols-3 sm:gap-x-10">
+    
+
+<li class="">
+  <a id="homeIconContainer" href="/" class="flex items-center p-2 transition-colors rounded-md NavItem sm:flex-col hover:bg-white/5">
+    <div class="p-1 sm:p-3 mb-1 w-8 h-8 sm:w-16 sm:h-16 flex items-center justify-center bg-gradient-to-br from-sky-400 to-blue-500 rounded-xl">
+      <canvas class="hidden sm:block" id="homeIcon" width="63.99" height="63.99"></canvas><canvas class="sm:hidden" id="homeIconMobile" width="24" height="24"></canvas>
+    </div>
+    <p class="ml-4 text-lg tracking-wider text-white sm:ml-0 font-p">Home</p>
+  </a>
+</li>
+
+<li class="">
+  <a id="msgIconContainer" href="/" class="flex items-center p-2 transition-colors rounded-md NavItem sm:flex-col hover:bg-white/5">
+    <div class="p-1 sm:p-3 mb-1 w-8 h-8 sm:w-16 sm:h-16 flex items-center justify-center bg-gradient-to-br from-transparent to-slate-600/10 rounded-xl">
+      <canvas class="hidden sm:block" id="msgIcon" width="63.99" height="63.99"></canvas><canvas class="sm:hidden" id="msgIconMobile" width="24" height="24"></canvas>
+    </div>
+    <p class="ml-4 text-lg tracking-wider text-white sm:ml-0 font-p">Chat</p>
+  </a>
+</li>
+
+<li class="">
+  <a id="notesIconContainer" href="/" class="flex items-center p-2 transition-colors rounded-md NavItem sm:flex-col hover:bg-white/5">
+    <div class="p-1 sm:p-3 mb-1 w-8 h-8 sm:w-16 sm:h-16 flex items-center justify-center bg-gradient-to-br from-transparent to-slate-600/10 rounded-xl">
+      <canvas class="hidden sm:block" id="notesIcon" width="51.5475" height="79.435862069"></canvas><canvas class="sm:hidden" id="notesIconMobile" width="20.619" height="31.774344827"></canvas>
+    </div>
+    <p class="ml-4 text-lg tracking-wider text-white sm:ml-0 font-p">Notes</p>
+  </a>
+</li>
+
+<li class="">
+  <a id="docsIconContainer" class="flex items-center p-2 transition-colors rounded-md NavItem sm:flex-col hover:bg-white/5">
+    <div class="p-1 sm:p-3 mb-1 w-8 h-8 sm:w-16 sm:h-16 flex items-center justify-center bg-gradient-to-br p-0 from-transparent to-slate-600/10 rounded-xl">
+      <canvas class="hidden sm:block" id="docsIcon" width="234" height="70"></canvas><canvas class="sm:hidden" id="docsIconMobile" width="78" height="23.340518018"></canvas>
+    </div>
+    <p class="ml-4 text-lg tracking-wider text-white sm:ml-0 font-p">Newsletter</p>
+  </a>
+</li>
+  </ul>
+</li>
+          <!-- <Section title="Social Media">
+            <Item link="/" notation="Home" >
+              <svg width="69" height="69" viewBox="0 0 69 69" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M3 34.5L10 27.5M10 27.5L34.5 3L59 27.5M10 27.5H59M10 27.5V62.5C10 63.4283 10.3688 64.3185 11.0251 64.9749C11.6815 65.6313 12.5717 66 13.5 66H24M10 27.5L24 66M59 27.5L66 34.5M59 27.5V62.5C59 63.4283 58.6313 64.3185 57.9749 64.9749C57.3185 65.6313 56.4283 66 55.5 66H45M59 27.5L45 66M24 66C24.9283 66 25.8185 65.6313 26.4749 64.9749C27.1312 64.3185 27.5 63.4283 27.5 62.5V48.5C27.5 47.5717 27.8688 46.6815 28.5251 46.0251C29.1815 45.3688 30.0717 45 31 45H38C38.9283 45 39.8185 45.3688 40.4749 46.0251C41.1312 46.6815 41.5 47.5717 41.5 48.5V62.5C41.5 63.4283 41.8688 64.3185 42.5251 64.9749C43.1815 65.6313 44.0717 66 45 66M24 66H45" stroke="white" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </Item>
+            <Item link="/" notation="Notes" bg="from-blue-400 via-indigo-500 to-violet-600" >
+              <svg width="56" height="69" viewBox="0 0 56 69" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M40.0588 66H15.3529H15C8.37258 66 3 60.6274 3 54V38.3335C3 36.318 3.98336 34.4293 5.6345 33.2735V33.2735C9.72812 30.408 15.3529 33.3365 15.3529 38.3334V41.8413C15.3529 48.1813 23.1639 51.1904 27.4175 46.489V46.489C31.5841 41.8839 39.2382 44.6648 39.4769 50.8705L40.0588 66ZM40.0588 66H40.9655C47.5929 66 52.9655 60.6274 52.9655 54V15C52.9655 8.37258 47.5929 3 40.9655 3H38.8235M3 25.5931V15C3 8.37259 8.37258 3 15 3H38.8235M38.8235 3V36.3529" stroke="white" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </Item>
+          </Section> -->
+        </ul>
+        <ul class="flex flex-col gap-y-6 sm:gap-y-12 ">
+          
+<li>
+  <h1 class="text-lg navItem sm:text-2xl text-sky-400 dark:text-purple-400 mb-8 font-medium leading-6" id="nav-dialog-title">Recent Posts</h1>
+  <ul class="flex flex-col items-center w-full">
+    
+<li class="w-full flex flex-col items-center">
+  <a href="" class="relative navItem group w-full h-48 rounded-lg transition-colors" style="">
+    <div class="absolute inset-0 m-0 box-border">
+      <img class="w-0 h-0 max-w-full max-h-full min-w-full min-h-full object-cover block absolute inset-0 visible box-border rounded-lg m-auto p-0" sizes="100vw" src="/assets/Posts/what_going_on_web.png" alt="UIWTF"> 
+    </div>
+    <div class="absolute inset-0 bg-slate-900/30 transition-opacity opacity-0 group-hover:opacity-100 backdrop-blur-[1px] duration-300 rounded-lg shadow-white-lg dark:shadow-slate-lg" style="transition-timing-function: cubic-bezier(.2, .8, .2, 1);"></div>
+    <div class="absolute left-8 bottom-4 opacity-0 translate-y-4 group-hover:translate-y-0 group-hover:opacity-100 transition-opacity" style="
+      transition-property: opacity, transform;
+      transition-timing-function: cubic-bezier(0.4, 0.3, 0.7, 1);">
+      <h1 class="text-2xl font-bold text-white">Recently, updates from</h1>
+      <p class="text-white w-full pr-20">Astro, Nuxt, Next, Angular, Vue, React, tailwindcss ...</p>
+    </div>
+  </a>
+</li>
+  </ul>
+</li>
+        </ul>
+        <button id="navCloseButton" type="button" class="navItem absolute right-10 top-10 justify-center p-0.5 text-sm font-medium text-slate-900 bg-slate-100 border border-transparent rounded-md hover:bg-slate-200 focus:outline-none focus-visible:ring-2 ring-offset-slate-1000 focus-visible:ring-offset-2 focus-visible:ring-slate-700 hidden sm:inline-flex">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+          </svg>
+        </button>
+      </section>
+    </div>
+  </article>
+</section>
+    </div>
+    <script>
+          const navOpenButton = document.getElementById('navSwitchButton');
+const navCloseButton = document.getElementById('navCloseButton');
+
+const navDialog = document.getElementById('nav-dialog');
+
+let overflow = document.documentElement.style.overflow
+let paddingRight = document.documentElement.style.paddingRight
+
+let scrollbarWidth = window.innerWidth - document.documentElement.clientWidth
+
+navDialog.classList.add('hidden');
+let isNavOpen = false;
+
+let priDur = 300;
+let itsDur = 50;
+let itsDelay = 50;
+let secDur = 500;
+
+const navOverlay = document.getElementById('nav-dialog-overlay');
+
+const navOverlayAle = navOverlay.animate({
+    opacity:[0,0.8],
+  },{
+    duration: priDur,
+    fill:'both',
+    easing:'cubic-bezier(.2,.8,.4,1)',
+  });
+
+const navDialogContainer = document.getElementById('nav-dialog-container');
+
+const navDialogContainerAle = navDialogContainer.animate(
+  [
+    {
+      transform:`translate${window.innerWidth < 624 ? 'X' : 'Y' }(-120%) scale(0.9)`,
+      opacity:0,
+    },
+    {
+      transform:'translate(0px) scale(1)',
+      opacity:1,
+    }
+  ],
+  {
+    duration: secDur,
+    fill:'both',
+    easing:'cubic-bezier( 0.23, 0.4, 0.32,1.33)',
+  }
+);
+
+let navItems = {};
+// let navItemsAle = {};
+let navItemsEnterAle = {};
+// navItemsEnterAle[0].reverse()
+// navItemsEnterAle[1].reverse()
+
+document.querySelectorAll('.NavItem').forEach((element,i) => {
+  navItems[i] = element;
+  navItemsEnterAle[i] = element.animate({
+        transform:['translateY(-10%)','translateY(0%)'],
+        opacity:['0','1']
+      },
+      {
+        duration: itsDur*(i+1),
+        delay: itsDelay*(i+1),
+        endDelay:5*(i+1),
+        fill:'both',
+        easing:'cubic-bezier(.2,.8,.4,1)',
+  });
+});  
+
+function openNavAnimate(){
+    navDialog.classList.remove('hidden');
+    document.documentElement.style.overflow = 'hidden'
+    document.documentElement.style.paddingRight = `${scrollbarWidth}px`
+    Object.values(navItemsEnterAle).forEach((ale)=>{
+      ale.playbackRate = +1;
+      ale.play();
+    })
+    navOverlayAle.playbackRate = +1;
+    navDialogContainerAle.playbackRate = +1;
+    navOverlayAle.play();
+    navDialogContainerAle.play();
+    isNavOpen = !isNavOpen;
+}
+function closeNavAnimate(){
+    Object.values(navItemsEnterAle).forEach((ale,i)=>{
+          ale.playbackRate = -1;
+          ale.play();
+          if(i===Object.values(navItemsEnterAle).length-5){
+            ale.onfinish = function() {
+              if(!isNavOpen){
+                navOverlayAle.playbackRate = -1;
+                navDialogContainerAle.playbackRate = -1;
+                navOverlayAle.play();
+                navDialogContainerAle.play();
+                setTimeout(() => {
+                  navDialog.classList.add('hidden');
+                  document.documentElement.style.overflow = overflow;
+                  document.documentElement.style.paddingRight = paddingRight;
+                }, secDur);
+              }
+            }
+          }
+    })
+    isNavOpen = !isNavOpen;
+}
+
+function animateNav(){
+  if(!isNavOpen) {
+    openNavAnimate();
+  } else {
+    closeNavAnimate();
+  }
+}
+
+navOpenButton.addEventListener('click',()=>{
+  animateNav()
+});
+
+const navBigSwitchButton = document.getElementById('navBigSwitchButton');
+
+navBigSwitchButton.addEventListener('click',()=>{
+  animateNav()
+});
+
+document.addEventListener('keydown', function (event) {
+  if ( event.ctrlKey && event.key === '/' ) {
+    animateNav()
+  }
+});
+
+navCloseButton.addEventListener('click',()=>{
+  animateNav()
+});
+// Get relevant elements and collections
+const tabbed = document.querySelector(".tabbed");
+const tablist = tabbed.querySelector("ul");
+const tabs = tablist.querySelectorAll("button");
+const panels = tabbed.querySelectorAll('[id^="section"]');
+let animationEnter = [];
+let panelsAnimationEnter = [];
+let Animation_Duration = 400;
+let Animation_Gap = 100;
+// The tab switching function
+const switchTab = (oldTab, newTab) => {
+  newTab.focus();
+  // Make the active tab focusable by the user (Tab key)
+  newTab.removeAttribute("tabindex");
+  // Set the selected state
+  newTab.setAttribute("aria-selected", "true");
+
+  onActiveClasses = ["text-white","dark\:text-purple-600","dark\:dark-shadow-project","shadow-project","font-semibold"]
+  onInactiveClasses = ["text-slate-500","dark\:text-purple-400"]
+
+  newTab.classList.add(...onActiveClasses);
+  newTab.classList.remove(...onInactiveClasses);
+  oldTab.removeAttribute("aria-selected");
+  oldTab.setAttribute("tabindex", "-1");
+  oldTab.classList.add(...onInactiveClasses);
+  oldTab.classList.remove(...onActiveClasses);
+
+  // Get the indices of the new and old tabs to find the correct
+  // tab panels to show and hide
+  let index = Array.prototype.indexOf.call(tabs, newTab);
+  let oldIndex = Array.prototype.indexOf.call(tabs, oldTab);
+
+  if (Math.sign(oldIndex - index) === -1) {
+    // Left To Right Direction
+      animationEnter = panels[oldIndex].animate(
+        {
+          transform: ["translateX(0px)", "translateX(-40px)"],
+          opacity: [1, 0],
+        },
+        {
+          duration: Animation_Duration,
+          fill: "both",
+          easing: "cubic-bezier(0.1, 0.32, 0, 1.08)",
+        },
+      )
+      setTimeout(()=>{
+        panels[oldIndex].style.display = "none";
+        panels[index].style.display = "grid";
+        panels[index].animate(
+          {
+            transform: ["translateX(40px)", "translateX(0px)"],
+            opacity: [0, 1],
+          },
+          {
+            duration: 250,
+            fill: "both",
+            easing: "cubic-bezier(0.6, 0.01, 0.01, 1.29)",
+          },
+        );
+      }, Animation_Duration - Animation_Gap );
+  } else {
+    // Right To Left Direction
+    panels[oldIndex].animate(
+      { transform: ["translateX(0px)", "translateX(40px)"], opacity: [1, 0] },
+      {
+        duration: Animation_Duration,
+        fill: "both",
+        easing: "cubic-bezier(0.1, 0.32, 0, 1.08)",
+      },
+    )
+    setTimeout(()=>{
+
+      panels[oldIndex].style.display = "none";
+      panels[index].style.display = "grid";
+      panels[index].animate(
+        {
+          transform: ["translateX(-40px)", "translateX(0px)"],
+          opacity: [0, 1],
+        },
+        {
+          duration: 250,
+          fill: "both",
+          easing: "cubic-bezier(0.6, 0.01, 0.01, 1.29)",
+        },
+      );
+    },Animation_Duration-Animation_Gap);
+  }
+};
+
+// Add the tablist role to the first <ul> in the .tabbed container
+tablist.setAttribute("role", "tablist");
+
+// Add semantics are remove user focusability for each tab
+Array.prototype.forEach.call(tabs, (tab, i) => {
+  tab.setAttribute("role", "tab");
+  tab.setAttribute("id", "tab" + (i + 1));
+  tab.setAttribute("tabindex", "-1");
+  tab.parentNode.setAttribute("role", "presentation");
+
+  // Handle clicking of tabs for mouse users
+  tab.addEventListener("click", (e) => {
+    e.preventDefault();
+    let currentTab = tablist.querySelector("[aria-selected]");
+    if (e.currentTarget !== currentTab) {
+      switchTab(currentTab, e.currentTarget);
+    }
+  });
+
+  // Handle keydown events for keyboard users
+  tab.addEventListener("keydown", (e) => {
+    // Get the index of the current tab in the tabs node list
+    let index = Array.prototype.indexOf.call(tabs, e.currentTarget);
+    // Work out which key the user is pressing and
+    // Calculate the new tab's index where appropriate
+    let dir =
+      e.which === 37
+        ? index - 1
+        : e.which === 39
+        ? index + 1
+        : e.which === 40
+        ? "down"
+        : null;
+    if (dir !== null) {
+      e.preventDefault();
+      // If the down key is pressed, move focus to the open panel,
+      // otherwise switch to the adjacent tab
+      dir === "down"
+        ? panels[i].focus()
+        : tabs[dir]
+        ? switchTab(e.currentTarget, tabs[dir])
+        : void 0;
+    }
+  });
+});
+
+// Add tab panel semantics and hide them all
+Array.prototype.forEach.call(panels, (panel, i) => {
+  panel.setAttribute("role", "tabpanel");
+  panel.setAttribute("tabindex", "-1");
+  let id = panel.getAttribute("id");
+  panel.setAttribute("aria-labelledby", tabs[i].id);
+  panel.style.display = "none";
+});
+
+// Initially activate the first tab and reveal the first tab panel
+tabs[0].removeAttribute("tabindex");
+tabs[0].setAttribute("aria-selected", "true");
+panels[0].style.display = "grid";
+
+    </script>
+    <!-- <script src={Astro.resolve("../scripts/highlight.js")} type="module" >
+    </script> -->
+    
+    <!-- <script src={Astro.resolve("../scripts/rive.js")} type="module" >
+    </script> -->
+    
+  <script type="module" src="./assets/inline-module-0f13ef75389bc5e586a17cf225f26180.b484b089.js"></script><script type="module" src="./assets/inline-module-eba89d980f1096d01fa0153a802bfbe9.4d0266e5.js"></script></body></html>
