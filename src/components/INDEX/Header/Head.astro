@@ -1,9 +1,13 @@
 ---
 import HeadCommon from "./HeadCommon.astro"
 import HeadSEO from "./HeadSEO.astro"
-const { isMarkdown=false } = Astro.props;
+const { content ,isMarkdown=false } = Astro.props;
+const defaultContent = {
+    title:"Suprito",
+    description:"Portfolio website..."
+}
 ---
 <head>
     <HeadCommon isMarkdown={isMarkdown} />
-    <HeadSEO site="" content={{title:"asd"}} canonicalURL={Astro.request.canonicalURL} />
+    <HeadSEO site="" content={ content ?? defaultContent } canonicalURL={Astro.request.canonicalURL} />
 </head>

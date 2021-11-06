@@ -10,69 +10,97 @@ const headers = content.astro?.headers;
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <Head isMarkdown={true} />
+  <Head content={content} isMarkdown={true} />
 </head>
 <body>
   <section class="relative p-2 bg-white dark:bg-slate-1000 transition-colors grid gap-x-4 grid-cols-12 w-full h-screen max-h-screen">
-    <NavBtn clx="md:hidden absolute bottom-6 right-6" />   
+    <NavBtn clx="md:hidden fixed z-50 bottom-4 right-4" />   
     <aside id="SideBarContainer" class="md:col-span-3 lg:col-span-2 hidden col-span-full -translate-x-full sm:translate-x-0 md:block bg-transparent rounded-lg overflow-y-auto">
       <SideBar content={content}  />
     </aside>
-    <main id="docsScrollArea" class="project-scrollbar relative prose prose-sm sm:prose md:prose-lg lg:prose-xl p-6 bg-slate-100 overflow-y-scroll border dark:border-slate-800 dark:prose-theme-slate col-start-1 md:col-start-4 lg:col-start-3 col-end-13 dark:bg-slate-900 rounded-lg transition-colors duration-200">
+    <main id="docsScrollArea" class="project-scrollbar relative prose prose-theme-light prose-sm sm:prose md:prose-lg lg:prose-xl p-6 bg-slate-100 overflow-y-scroll border dark:border-slate-800 dark:prose-theme-slate col-start-1 md:col-start-4 lg:col-start-3 col-end-13 dark:bg-slate-900 rounded-lg transition-colors duration-200">
       <ThemeBtn clx="absolute right-4 top-4" />
       <slot/>
     </main>
   </section>
-  <script define:vars={{headers}} >
-  let intersectingH1Element;
+<script define:vars={{headers}}>
+ let ParentH1;
+ let CurrentH1;
+ let lastElementInViewport;
+  let intersectingH1Elements = [];
   let intersectingH2Element;
   let observer;
-  const activeClassH1 = ["text-blue-500","border-l-2","border-blue-400","before:opacity-100"];
-  const activeClassH2 = ["text-blue-400","border-l-2","border-blue-400","before:opacity-100"];
 
-  const inActiveClassH1 = ["text-slate-700","before:opacity-30"];
-  const inActiveClassH2 = ["text-slate-400","before:opacity-30"];
+  const activeClass = {
+    H1: ["text-blue-500","border-l-2","border-blue-400","before:opacity-100"],
+    H2: ["text-blue-400","border-l-2","border-blue-400","before:opacity-100"],
+  }
+ 
+  const inActiveClass = {
+    H1:["text-slate-700","before:opacity-30"],
+    H2:["text-slate-400","before:opacity-30"],
+  }
+  
+  function removeClass( elementId, Classes ) {
+    document.getElementById(elementId).classList.remove(...Classes);
+  }
+  function addClass( elementId, Classes ) {
+    document.getElementById(elementId).classList.add(...Classes);
+  }
+
+  function applyActiveClass( elementName , elementId ){
+    removeClass( elementId, inActiveClass[elementName]);
+    addClass(elementId, activeClass[elementName]);
+  }
+
+  function applyInactiveClass(elementName,elementId){
+    removeClass( elementId, activeClass[elementName]);
+    addClass(elementId, inActiveClass[elementName]);
+  }
 
     observer = new IntersectionObserver((entries, observer)=>{
       for (let index = 0; index < entries.length; index++) {
           let element = entries[index];
           if( element.isIntersecting ) {
-            if( element.target.tagName==='H1' ) {
-              document.getElementById(element.target.id+'-link').classList.remove(...inActiveClassH1);
-              document.getElementById(element.target.id+'-link').classList.add(...activeClassH1);
-              if( intersectingH1Element !== undefined ){
-                document.getElementById(intersectingH1Element.id+'-link').classList.add(...inActiveClassH1);
-                document.getElementById(intersectingH1Element.id+'-link').classList.remove(...activeClassH1);
-                if(intersectingH2Element !== undefined){
-                  document.getElementById(intersectingH2Element.id+'-link').classList.add(...inActiveClassH2);
-                  document.getElementById(intersectingH2Element.id+'-link').classList.remove(...activeClassH2);
+            if( element.target.tagName === 'H1' && document.getElementById(element.target.id+'-link').parentElement.nextElementSibling === null ){
+              if( ParentH1 !== document.getElementById(element.target.id+'-link') ){
+                if(ParentH1 !== undefined){
+                  applyInactiveClass('H1',ParentH1.id);
                 }
+                ParentH1 = document.getElementById(element.target.id+'-link');
+                applyActiveClass('H1',ParentH1.id)
               }
-              intersectingH1Element = element.target
-            }
-            else {
-              document.getElementById(element.target.id+'-link').classList.remove(...inActiveClassH2);
-              document.getElementById(element.target.id+'-link').classList.add(...activeClassH2);
-              if( intersectingH2Element !== undefined ){
-                document.getElementById(intersectingH2Element.id+'-link').classList.add(...inActiveClassH2);
-                document.getElementById(intersectingH2Element.id+'-link').classList.remove(...activeClassH2);
+            } else {
+              if( element.target.tagName === 'H2' ){
+                if(ParentH1 !== document.getElementById(element.target.id+'-link').parentElement.parentElement.parentElement.previousElementSibling ){
+                  if(ParentH1 !== undefined){
+                    applyInactiveClass('H1',ParentH1.id);
+                  }
+                ParentH1 = document.getElementById(element.target.id+'-link').parentElement.parentElement.parentElement.previousElementSibling.lastChild;
+                applyActiveClass('H1',ParentH1.id)
+                }
+                applyActiveClass('H2',element.target.id+'-link');
               }
-              intersectingH2Element = element.target;
             }
+        }/*If_block*/ else{
+          if( element.target.tagName === 'H2' ) {
+            applyInactiveClass('H2',element.target.id+'-link');
           }
         }
+      }
       },
       {
         root: document.getElementById('docsScrollArea'),
-        rootMargin:'0px',
+        rootMargin:'0px 0px 0px 0px',
         threshold:0
       }
     );
     for (let index = 0; index < headers.length; index++) {
       observer.observe(document.getElementById(headers[index]['slug']));
     }
-  </script>
-<script type="module" >
+</script>
+  <!-- <script src={Astro.resolve("../scripts/ThemeToggle.js")} type="module" ></script> -->
+  <script type="module" >
   import { Rive, Layout, Fit, Alignment } from "rive-js";
 
 const button = document.getElementById("toggle");

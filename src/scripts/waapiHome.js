@@ -1,4 +1,4 @@
-      const navOpenButton = document.getElementById('navSwitchButton');
+const navOpenButton = document.getElementById('navSwitchButton');
 const navCloseButton = document.getElementById('navCloseButton');
 
 const navDialog = document.getElementById('nav-dialog');

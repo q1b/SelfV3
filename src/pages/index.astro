@@ -19,6 +19,8 @@ import TabComp from "../components/INDEX/Tab_Component/index.astro"
     </main>
     <Model/>
     </div>
+    <!-- <script src={Astro.resolve("../scripts/waapiHome.js")} type="module" >
+    </script> -->
     <script>
           const navOpenButton = document.getElementById('navSwitchButton');
 const navCloseButton = document.getElementById('navCloseButton');
@@ -303,8 +305,8 @@ tabs[0].setAttribute("aria-selected", "true");
 panels[0].style.display = "grid";
 
     </script>
-    <!-- <script src={Astro.resolve("../scripts/highlight.js")} type="module" >
-    </script> -->
+    <!--script src={Astro.resolve("../scripts/highlight.js")} type="module" >
+    </script-->
     <script type="module">
       import { annotate } from 'rough-notation';
 const elementsToHighlight = document.querySelectorAll('#annotate-highlight');
@@ -460,7 +462,6 @@ const docs = new Rive({
     };
   },
 });
-
     </script>
   </body>
 </html>

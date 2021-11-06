@@ -19,7 +19,7 @@ const ct = {
   h4: colors.slate[200],
   'h4-strong': colors.slate[100],
   p: colors.slate[500]+'BB',
-  'p-strong': colors.slate[500]+'BB',
+  'p-strong': colors.slate[400]+'BB',
   hr:colors.slate[300],
   ol:colors.slate[300],
   ul:colors.slate[300],
@@ -119,7 +119,8 @@ module.exports = {
         flow: 'Flow',
       },
       typography: (theme) => ({
-        'theme-light-slate':{
+        'theme-light':{
+          css:{
             h1: {
               textShadow:`2px 2px 1px ${dk['h1']}77`,
               color: dk['h1'],
@@ -367,64 +368,13 @@ module.exports = {
             'pre code::after': {
               content: 'none',
             },
+          }
         },
         'theme-slate': {
           css: {
             '&::selection':{
               backgroundImage:'#FF0060',
             },
-            /* Code Highlighting Section Start */ 
-            // '.language-css > code, .language-sass > code, .language-scss > code':{
-              // color: '#fd9170',
-            // },
-            // '.language-diff .token.prefix.deleted, .language-diff .token.prefix.inserted':{
-              // userSelect: 'none'
-            // },
-            // "[class*='language-'] .namespace":{
-              // opacity: '0.7',
-            // },
-            // ".token.plain-text, [class*='language-bash'] span.token,[class*='language-shell'] span.token":{
-              // color: "hsla(var(--color-gray-90), 1)", // Console lang
-            // },
-            // "[class*='language-bash'] span.token, [class*='language-shell'] span.token":{
-              // fontStyle: 'bold'
-            // },
-            // ".token.prolog,.token.comment, [class*='language-bash'] span.token.comment, [class*='language-shell'] span.token.comment":{
-              // color:'hsla(var(--color-gray-70), 1)',
-            // },
-            // ".token.selector, .token.tag, .token.unit, .token.url, .token.variable, .token.entity, .token.deleted":{
-              // color: '#fa5e5b'
-            // },
-            // ".token.boolean, .token.constant, .token.doctype, .token.number, .token.regex, .token.builtin, .token.class, .token.hexcode, .token.class-name .token.attr-name":{
-              // color: 'hsla(var(--color-yellow), 1)',
-            // },
-            // ".token.atrule, .token.attribute, .token.attr-value .token.punctuation, .token.attr-value, .token.pseudo-class, .token.pseudo-element, .token.string": {
-              // color: 'hsla(var(--color-green), 1)'
-            // },
-            // " .token.symbol, .token.function, .token.id, .token.important":{
-              // color: 'hsla(var(--color-blue), 1)',
-            // },
-            // ".token.important, .token.id" : {
-              // fontWeight:'bold',
-            // }, 
-            // ".token.cdata, .token.char, .token.property ":{
-              // color: '#23b1af'
-            // },
-            // ".token.inserted":{
-              // color: 'hsla(var(--color-green), 1)'
-            // },
-            // ".token.keyword":{
-              // color: '#ff657c',
-              // fontStyle: 'italic',
-            // },
-            // ".token.operator":{
-              // color: 'hsla(var(--color-gray-70), 1)'
-            // },
-            // ".token.attr-value .token.attr-equals, .token.punctuation":{
-              // color: 'hsla(var(--color-gray-80), 1)'
-            // },
-            // /* code-highlighting-section-ended */
-
             // typography-section-starting
             h1: {
               textShadow:`2px 2px 1px ${ct['h1']}77`,
